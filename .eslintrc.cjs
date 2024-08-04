@@ -9,13 +9,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:tailwindcss/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:tailwindcss/recommended', 'plugin:storybook/recommended'],
   overrides: [
     {
       env: {
