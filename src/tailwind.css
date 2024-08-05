@@ -13,7 +13,7 @@
   /* For webkit browsers (Chrome, Safari) */
   ::-webkit-scrollbar {
     height: 4px; /* Width of the scrollbar */
-    width: 6px;
+    width: 8px;
     background-color: #f7f7f7;
     border-radius: 8px;
   }

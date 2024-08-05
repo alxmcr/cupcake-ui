@@ -33,7 +33,7 @@ export default function WrapperListOptions({
   }
 
   return (
-    <div className="u-list-options-shadow h-[114px] w-[268px] rounded-lg p-2 md:w-[632px] lg:w-[996px]">
+    <div className="u-list-options-shadow h-[114px] w-[268px] rounded-lg bg-slate-400 px-2 md:w-[632px] lg:w-[996px]">
       <ListOptionsUser
         options={optionsFiltered}
         onClickSelectOption={onClickSelectOption}

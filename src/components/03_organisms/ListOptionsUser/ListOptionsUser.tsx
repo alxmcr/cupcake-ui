@@ -10,14 +10,14 @@ type Props = {
 export default function ListOptionsUser({ options = [], idOptionSelected = '', onClickSelectOption }: Props) {
   if (options.length === 0) {
     return (
-      <div className="h-24 w-full">
+      <div className="flex h-[46px] w-full items-center justify-center border md:w-[616px] lg:w-[970px]">
         <p>No users</p>
       </div>
     );
   }
 
   return (
-    <ol className="flex h-24 w-full flex-col gap-1 overflow-y-auto overflow-x-hidden md:w-[616px] lg:w-[970px]">
+    <ol className="flex max-h-[114px] w-full flex-col gap-1 overflow-y-auto overflow-x-hidden border bg-purple-300 py-2 md:w-[616px] lg:w-[980px]">
       {options.map((option) => (
         <OptionUser
           key={option.id}
