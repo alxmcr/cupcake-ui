@@ -8,7 +8,6 @@ type Props = {
 };
 
 export default function ComboBox({ options = [] }: Props) {
-  const [comboBoxText, setComboBoxText] = React.useState('Elige un usuario');
   const [searchText, setSearchText] = React.useState('');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
@@ -42,7 +41,7 @@ export default function ComboBox({ options = [] }: Props) {
       <ControlComboBox
         id="ControlComboBox-text"
         inputType="text"
-        labelText={comboBoxText}
+        labelText="Elige un usuario"
         name="user-name"
         onClick={toggleComboBox}
         searchText={searchText}
