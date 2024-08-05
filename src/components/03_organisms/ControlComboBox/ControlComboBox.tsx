@@ -25,7 +25,7 @@ export default function ControlComboBox({
   onClick,
 }: Props) {
   return (
-    <div className="relative w-[268px]" onClick={onClick}>
+    <div className="relative w-[268px] md:w-[632px] lg:w-[996px]" onClick={onClick}>
       <input
         type={inputType}
         id={id}
