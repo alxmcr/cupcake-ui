@@ -21,19 +21,25 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
       if (!isOpenComboBox) {
         setIsOpenComboBox(true);
       } else {
+        inputTextRef.current.blur();
         setIsOpenComboBox(false);
       }
     }
   };
 
   const onBlurControlComboBox = () => {
-    console.log('blur');
-    const isOptionSelected = idOptionSelected !== '' && nameOptionSelected !== '';
+    console.log('blur', searchText);
+    const isOptionSelected = idOptionSelected !== '' && nameOptionSelected !== '' && searchText !== '';
 
-    if (isOptionSelected) {
-      setIsOpenComboBox(false);
-    } else if (isOpenComboBox) {
-      setIsOpenComboBox(false);
+    if (idOptionSelected !== '' && nameOptionSelected !== '') {
+      if (searchText !== '') {
+      }
+    }
+
+    if (isOpenComboBox) {
+      if (isOptionSelected) {
+        setIsOpenComboBox(false);
+      }
     }
   };
 
