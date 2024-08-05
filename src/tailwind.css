@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .u-list-options-shadow {
+    box-shadow: 0 4px 8px rgba(64, 67, 68, 24%);
+  }
+}
+
 /* Scrollbar */
 @layer components {
   /* For webkit browsers (Chrome, Safari) */
@@ -33,11 +39,5 @@
   .scrollable-element {
     scrollbar-width: thin; /* Width of the scrollbar */
     scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar handle and track */
-  }
-}
-
-@layer components {
-  .u-list-options-shadow {
-    box-shadow: 0 4px 8px rgba(64, 67, 68, 24%);
   }
 }
