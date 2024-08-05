@@ -8,24 +8,13 @@ type Props = {
 };
 
 export default function OptionUser({ id = '', text = '', selected = false }: Props) {
-  if (selected) {
-    return (
-      <li
-        id={id}
-        className="flex h-[46px] w-[268px] list-none items-center justify-between gap-1 rounded-lg font-extrabold text-gray-800"
-      >
-        <InfoUserProfile selected text={text} />
-        <AppIcon16x16 iconName="icon-checkmark" />
-      </li>
-    );
-  }
-
   return (
     <li
       id={id}
-      className="flex h-[46px] w-[268px] list-none items-center justify-between gap-1 rounded-lg text-gray-800"
+      className="flex h-[46px] w-[268px] cursor-pointer list-none items-center justify-between gap-1 rounded-lg p-4"
     >
-      <InfoUserProfile text={text} />
+      <InfoUserProfile selected={selected} text={text} />
+      {selected ? <AppIcon16x16 iconName="icon-checkmark" className="text-cyan-700" /> : null}
     </li>
   );
 }
