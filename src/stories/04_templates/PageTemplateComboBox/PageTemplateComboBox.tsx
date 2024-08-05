@@ -1,4 +1,4 @@
-import { ComboBox } from '../../03_organisms/ComboBox';
+import { ComboBox } from '../../../components/03_organisms/ComboBox';
 import mockUsersData from '../../../mocks/data/sample-options-user.json';
 
 type Props = {
