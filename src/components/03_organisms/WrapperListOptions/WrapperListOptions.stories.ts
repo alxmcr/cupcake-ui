@@ -10,9 +10,9 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    options: { control: 'object' },
     isLoadingOptions: { control: 'boolean' },
     idOptionSelected: { control: 'text' },
+    options: { control: 'object' },
     onClick: { action: 'onClick' },
   },
 } satisfies Meta<typeof WrapperListOptions>;

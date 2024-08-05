@@ -1,4 +1,6 @@
-export default function SkeletonListOptionsUser() {
+import { SVGProps } from 'react';
+
+export default function SkeletonListOptionsUser(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       role="img"
@@ -7,6 +9,7 @@ export default function SkeletonListOptionsUser() {
       aria-labelledby="loading-aria"
       viewBox="0 0 996 112"
       preserveAspectRatio="none"
+      {...props}
     >
       <title id="loading-aria">Loading...</title>
       <rect

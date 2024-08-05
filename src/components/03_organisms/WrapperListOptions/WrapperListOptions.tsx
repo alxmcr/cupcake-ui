@@ -17,8 +17,8 @@ export default function WrapperListOptions({
 }: Props) {
   if (isLoadingOptions) {
     return (
-      <div className="u-list-options-shadow h-[114px] w-[268px] rounded-lg p-2">
-        <SkeletonListOptionsUser />
+      <div className="u-list-options-shadow h-[114px] w-[268px] rounded-lg md:w-[632px] lg:w-[996px]">
+        <SkeletonListOptionsUser className="h-[114px] w-full" />
       </div>
     );
   }
