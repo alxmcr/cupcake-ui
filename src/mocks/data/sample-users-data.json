@@ -1,0 +1,82 @@
+[
+    {
+        "user_id": "user-001",
+        "first_name": "Victor",
+        "last_name": "Díaz",
+        "email": "vdiaz@cupcake.com",
+        "country": "México",
+        "country_code": "mx"
+    },
+    {
+        "user_id": "user-002",
+        "first_name": "Jesús",
+        "last_name": "Millán",
+        "email": "jmillan@cupcake.com",
+        "country": "México",
+        "country_code": "mx"
+    },
+    {
+        "user_id": "user-003",
+        "first_name": "Max",
+        "last_name": "Mendez",
+        "email": "mmendez@cupcake.com",
+        "country": "Brazil",
+        "country_code": "br"
+    },
+    {
+        "user_id": "user-004",
+        "first_name": "Nicholas",
+        "last_name": "Yepes",
+        "email": "nyepes@cupcake.com",
+        "country": "Colombia",
+        "country_code": "co"
+    },
+    {
+        "user_id": "user-004",
+        "first_name": "Nicholas",
+        "last_name": "Yepes",
+        "email": "nyepes@cupcake.com",
+        "country": "Colombia",
+        "country_code": "co"
+    },
+    {
+        "user_id": "a1b2c3d4",
+        "first_name": "Alice",
+        "last_name": "Johnson",
+        "email": "alice.johnson@example.com",
+        "country": "United States",
+        "country_code": "US"
+    },
+    {
+        "user_id": "e5f6g7h8",
+        "first_name": "Carlos",
+        "last_name": "Martinez",
+        "email": "carlos.martinez@example.com",
+        "country": "Spain",
+        "country_code": "ES"
+    },
+    {
+        "user_id": "i9j0k1l2",
+        "first_name": "Emma",
+        "last_name": "Smith",
+        "email": "emma.smith@example.com",
+        "country": "Australia",
+        "country_code": "AU"
+    },
+    {
+        "user_id": "m3n4o5p6",
+        "first_name": "Liam",
+        "last_name": "Brown",
+        "email": "liam.brown@example.com",
+        "country": "Canada",
+        "country_code": "CA"
+    },
+    {
+        "user_id": "q7r8s9t0",
+        "first_name": "Sofia",
+        "last_name": "Garcia",
+        "email": "sofia.garcia@example.com",
+        "country": "Mexico",
+        "country_code": "MX"
+    }
+]

@@ -12,6 +12,7 @@ const meta = {
     id: { control: 'text' },
     text: { control: 'text' },
     selected: { control: 'boolean' },
+    setOptionSelectedId: { action: 'setOptionSelectedId' },
   },
 } satisfies Meta<typeof OptionUser>;
 
@@ -24,6 +25,7 @@ export const Default: Story = {
     id: 'user-victor',
     text: 'Victor Díaz',
     selected: false,
+    setOptionSelectedId: () => {},
   },
 };
 
@@ -32,5 +34,6 @@ export const Selected: Story = {
     id: 'user-victor',
     text: 'Nicholas Yepes',
     selected: true,
+    setOptionSelectedId: () => {},
   },
 };

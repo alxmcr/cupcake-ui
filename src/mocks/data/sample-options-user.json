@@ -1,0 +1,52 @@
+[
+    {
+        "id": "user-001",
+        "value": "user-001",
+        "text": "Victor Díaz"
+    },
+    {
+        "id": "user-002",
+        "value": "user-002",
+        "text": "Jesús Millán"
+    },
+    {
+        "id": "user-003",
+        "value": "user-003",
+        "text": "Max Mendez"
+    },
+    {
+        "id": "user-004",
+        "value": "user-004",
+        "text": "Nicholas Yepes"
+    },
+    {
+        "id": "user-004",
+        "value": "user-004",
+        "text": "Nicholas Yepes"
+    },
+    {
+        "id": "a1b2c3d4",
+        "value": "a1b2c3d4",
+        "text": "Alice Johnson"
+    },
+    {
+        "id": "e5f6g7h8",
+        "value": "e5f6g7h8",
+        "text": "Carlos Martinez"
+    },
+    {
+        "id": "i9j0k1l2",
+        "value": "i9j0k1l2",
+        "text": "Emma Smith"
+    },
+    {
+        "id": "m3n4o5p6",
+        "value": "m3n4o5p6",
+        "text": "Liam Brown"
+    },
+    {
+        "id": "q7r8s9t0",
+        "value": "q7r8s9t0",
+        "text": "Sofia Garcia"
+    }
+]
