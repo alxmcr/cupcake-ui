@@ -18,12 +18,22 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
     if (inputTextRef.current) {
       // Focus
       inputTextRef.current.focus();
-
       if (!isOpenComboBox) {
         setIsOpenComboBox(true);
       } else {
         setIsOpenComboBox(false);
       }
+    }
+  };
+
+  const onBlurControlComboBox = () => {
+    console.log('blur');
+    const isOptionSelected = idOptionSelected !== '' && nameOptionSelected !== '';
+
+    if (isOptionSelected) {
+      setIsOpenComboBox(false);
+    } else if (isOpenComboBox) {
+      setIsOpenComboBox(false);
     }
   };
 
@@ -39,7 +49,9 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   };
 
   React.useEffect(() => {
-    if (idOptionSelected !== '' && nameOptionSelected !== '') {
+    const isOptionSelected = idOptionSelected !== '' && nameOptionSelected !== '';
+
+    if (isOptionSelected) {
       setSearchText(nameOptionSelected);
     } else {
       if (isOpenComboBox) {
@@ -59,6 +71,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
         searchText={searchText}
         onClickControlComboBox={onClickControlComboBox}
         onChangeSearchText={onChangeSearchText}
+        onBlurControlComboBox={onBlurControlComboBox}
       />
       {isOpenComboBox ? (
         <WrapperListOptions

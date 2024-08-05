@@ -12,6 +12,7 @@ type Props = {
   searchText: string;
   onChangeSearchText: (ev: React.ChangeEvent<HTMLInputElement>) => void;
   onClickControlComboBox: (inputTextRef: React.RefObject<HTMLInputElement>) => void;
+  onBlurControlComboBox: () => void;
 };
 
 export default function ControlComboBox({
@@ -24,6 +25,7 @@ export default function ControlComboBox({
   searchText = '',
   onChangeSearchText,
   onClickControlComboBox,
+  onBlurControlComboBox,
 }: Props) {
   const inputTextRef = React.useRef<HTMLInputElement>(null);
 
@@ -42,6 +44,7 @@ export default function ControlComboBox({
         autoComplete="off"
         value={searchText}
         onChange={onChangeSearchText}
+        onBlur={onBlurControlComboBox}
       />
       <Caption text={captionText} />
       <label
