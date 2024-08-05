@@ -7,6 +7,8 @@ type Props = {
   readOnly?: boolean;
   labelText: string;
   onClick: () => void;
+  searchText: string;
+  onChangeSearchText: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function ControlComboBox({
@@ -15,6 +17,8 @@ export default function ControlComboBox({
   inputType = 'text',
   labelText = '',
   readOnly = false,
+  searchText = '',
+  onChangeSearchText,
   onClick,
 }: Props) {
   return (
@@ -27,6 +31,8 @@ export default function ControlComboBox({
         placeholder=" "
         readOnly={readOnly}
         autoComplete="off"
+        value={searchText}
+        onChange={onChangeSearchText}
       />
       <label
         htmlFor={id}
