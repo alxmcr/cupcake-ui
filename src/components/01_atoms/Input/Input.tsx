@@ -6,13 +6,7 @@ type Props = {
   readOnly: boolean;
 };
 
-export default function Input({
-  type = 'text',
-  name = '',
-  id = '',
-  placeholder = '',
-  readOnly = false,
-}: Props) {
+export default function Input({ type = 'text', name = '', id = '', placeholder = '', readOnly = false }: Props) {
   return (
     <input
       type={type}
