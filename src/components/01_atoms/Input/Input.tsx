@@ -23,7 +23,7 @@ export default function Input({ type = 'text', name = '', id = '', placeholder =
       value={inputValue}
       onChange={onChange}
       autoComplete="off"
-      className="h-[38px] w-[268px] rounded-lg border border-gray-300 bg-white px-2 text-black outline-none focus:border-cyan-900"
+      className="h-[38px] w-[268px] rounded-lg border border-gray-300 bg-white px-4 text-black outline-none focus:border-cyan-900"
     />
   );
 }
