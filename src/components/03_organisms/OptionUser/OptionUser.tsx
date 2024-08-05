@@ -16,7 +16,7 @@ export default function OptionUser({ id = '', text = '', selected = false, setOp
   return (
     <li
       id={id}
-      className="flex h-[46px] w-[268px] cursor-pointer list-none items-center justify-between gap-1 rounded-lg p-4"
+      className="flex h-[46px] w-[252px] cursor-pointer list-none items-center justify-between gap-1 rounded-lg p-4"
       onClick={onClick}
     >
       <InfoUserProfile selected={selected} text={text} />

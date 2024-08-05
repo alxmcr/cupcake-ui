@@ -10,7 +10,7 @@ export default function ListOptionsUser({ options = [] }: Props) {
   const [optionSelectedId, setOptionSelectedId] = React.useState('');
 
   return (
-    <ol>
+    <ol className="flex h-24 w-[252px] flex-col gap-1 overflow-y-auto overflow-x-hidden">
       {options.map((option) => (
         <OptionUser
           key={option.id}
