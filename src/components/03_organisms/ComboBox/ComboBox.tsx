@@ -67,7 +67,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   }, []);
 
   return (
-    <div className="border border-red-400" ref={comboBoxRef}>
+    <div ref={comboBoxRef}>
       <ControlComboBox
         id="ControlComboBox-text"
         inputType="text"
