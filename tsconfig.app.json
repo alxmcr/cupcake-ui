@@ -25,6 +25,7 @@
 
     /* Linting extra */
     "noImplicitReturns": true,
+    "noImplicitAny": true,
     "allowUnreachableCode": false,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
