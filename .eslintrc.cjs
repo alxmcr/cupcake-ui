@@ -9,7 +9,14 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:tailwindcss/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:tailwindcss/recommended',
+    'plugin:storybook/recommended',
+  ],
   overrides: [
     {
       env: {
@@ -38,5 +45,15 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
+    // handle 'return` on functions or components
+    'no-void': 'error',
+    '@typescript-eslint/explicit-function-return-type': [
+      'off',
+      {
+        allowExpressions: false,
+        allowHigherOrderFunctions: false,
+        allowTypedFunctionExpressions: false,
+      },
+    ],
   },
 };

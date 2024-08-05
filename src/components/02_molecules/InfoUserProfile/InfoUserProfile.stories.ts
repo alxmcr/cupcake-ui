@@ -27,7 +27,7 @@ export const Default: Story = {
 
 export const Selected: Story = {
   args: {
-    text: 'Victor Díaz',
+    text: 'Victor Díazx',
     selected: true,
   },
 };
