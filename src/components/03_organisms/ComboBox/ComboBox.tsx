@@ -9,19 +9,22 @@ type Props = {
 };
 
 export default function ComboBox({ options = [], isLoadingOptions = false }: Props) {
+  const comboBoxRef = React.useRef<HTMLDivElement>(null);
   const [searchText, setSearchText] = React.useState('');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
   const [isOpenComboBox, setIsOpenComboBox] = React.useState(false);
 
+  const onBlurComboBox = () => {};
+
   const onClickControlComboBox = (inputTextRef: React.RefObject<HTMLInputElement>) => {
     if (inputTextRef.current) {
       // Focus
       inputTextRef.current.focus();
-
       if (!isOpenComboBox) {
         setIsOpenComboBox(true);
       } else {
+        inputTextRef.current.blur();
         setIsOpenComboBox(false);
       }
     }
@@ -39,7 +42,9 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   };
 
   React.useEffect(() => {
-    if (idOptionSelected !== '' && nameOptionSelected !== '') {
+    const isOptionSelected = idOptionSelected !== '' && nameOptionSelected !== '';
+
+    if (isOptionSelected) {
       setSearchText(nameOptionSelected);
     } else {
       if (isOpenComboBox) {
@@ -48,8 +53,21 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
     }
   }, [isOpenComboBox, idOptionSelected, nameOptionSelected]);
 
+  React.useEffect(() => {
+    const onMouseDownComboBox = (ev: MouseEvent) => {
+      if (comboBoxRef.current && !comboBoxRef.current.contains(ev.target as Node)) {
+        setIsOpenComboBox(false);
+      }
+    };
+
+    document.addEventListener('mousedown', onMouseDownComboBox);
+
+    // Clean up
+    return () => document.removeEventListener('mousedown', onMouseDownComboBox);
+  }, []);
+
   return (
-    <div>
+    <div className="border border-red-400" ref={comboBoxRef}>
       <ControlComboBox
         id="ControlComboBox-text"
         inputType="text"
@@ -59,6 +77,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
         searchText={searchText}
         onClickControlComboBox={onClickControlComboBox}
         onChangeSearchText={onChangeSearchText}
+        onBlurComboBox={onBlurComboBox}
       />
       {isOpenComboBox ? (
         <WrapperListOptions
