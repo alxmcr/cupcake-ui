@@ -1,5 +1,5 @@
 import { OptionData } from '../../../types/appTypes';
-import { ListOptionsUser } from '../ListOptionUser';
+import { ListOptionsUser } from '../ListOptionsUser';
 
 type Props = {
   options: OptionData[];

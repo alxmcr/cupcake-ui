@@ -2,12 +2,14 @@ import React from 'react';
 import { OptionData } from '../../../types/appTypes';
 import { ControlComboBox } from '../ControlComboBox';
 import { WrapperListOptions } from '../WrapperListOptions';
+import { LoadingStates } from '../../../types/enumTypes';
 
 type Props = {
   options: OptionData[];
+  statusLoadingOptions: LoadingStates;
 };
 
-export default function ComboBox({ options = [] }: Props) {
+export default function ComboBox({ options = [], statusLoadingOptions = LoadingStates.IDLE }: Props) {
   const [searchText, setSearchText] = React.useState('');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
