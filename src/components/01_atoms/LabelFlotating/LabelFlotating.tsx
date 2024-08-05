@@ -1,7 +1,6 @@
 type Props = {
   htmlFor: string;
   text: string;
-  floating?: boolean;
 };
 
 export default function LabelFlotating({ htmlFor = '', text = '' }: Props) {

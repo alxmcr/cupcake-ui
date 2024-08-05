@@ -9,11 +9,11 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    type: { control: 'text' },
+    inputType: { control: 'text' },
     id: { control: 'text' },
     name: { control: 'text' },
-    placeholder: { control: 'text' },
     readOnly: { control: 'boolean' },
+    labelText: { control: 'text' },
   },
 } satisfies Meta<typeof FormFieldFloating>;
 
@@ -23,10 +23,10 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Text: Story = {
   args: {
-    type: 'text',
+    inputType: 'text',
     id: 'FormFieldFloating-text',
     name: 'user-name',
-    placeholder: 'Elige un usuario',
     readOnly: false,
+    labelText: 'Elige un usuario',
   },
 };
