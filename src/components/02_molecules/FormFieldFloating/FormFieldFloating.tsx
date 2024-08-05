@@ -1,11 +1,11 @@
 import { Input } from '../../01_atoms/Input';
-import WrapperLabelFloating from '../WrapperLabelFloating/WrapperLabelFloating';
+import { LabelFlotating } from '../../01_atoms/LabelFlotating';
 
 export default function FormFieldFloating() {
   return (
-    <div className="relative flex h-[46px] flex-col justify-end border">
-      <Input id="input-text" name="user-name" placeholder="Elige un usuario" type="text" />
-      <WrapperLabelFloating text="Elige un usuario" />
+    <div className="relative">
+      <Input id="input-text" name="user-name" type="text" />
+      <LabelFlotating htmlFor="input-user" text="Elige un usuario" />
     </div>
   );
 }
