@@ -1,9 +1,11 @@
+import { InfoUserProfile } from '../components/02_molecules/InfoUserProfile';
 import { ComboBox } from '../components/03_organisms/ComboBox';
 
 export default function HomePage() {
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-3">
       <h1 className="text-3xl font-bold text-pink-400 underline">Hello world!</h1>
+      <InfoUserProfile text="Victor Díaz" />
       <ComboBox
         options={[
           {
