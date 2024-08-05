@@ -17,7 +17,7 @@ export default function ListOptionsUser({ options = [], idOptionSelected = '', o
   }
 
   return (
-    <ol className="flex max-h-[114px] w-full flex-col gap-1 overflow-y-auto overflow-x-hidden border bg-purple-300 py-2 md:w-[616px] lg:w-[980px]">
+    <ol className="flex max-h-[114px] w-full flex-col gap-1 overflow-y-auto overflow-x-hidden border bg-purple-300  md:w-[616px] lg:w-[980px]">
       {options.map((option) => (
         <OptionUser
           key={option.id}
