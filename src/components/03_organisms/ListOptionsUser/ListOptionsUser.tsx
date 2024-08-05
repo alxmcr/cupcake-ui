@@ -8,6 +8,14 @@ type Props = {
 };
 
 export default function ListOptionsUser({ options = [], idOptionSelected = '', onClickSelectOption }: Props) {
+  if (options.length === 0) {
+    return (
+      <div className="h-24 w-full">
+        <p>No users</p>
+      </div>
+    );
+  }
+
   return (
     <ol className="flex h-24 w-full flex-col gap-1 overflow-y-auto overflow-x-hidden md:w-[616px] lg:w-[970px]">
       {options.map((option) => (

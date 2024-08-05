@@ -4,17 +4,26 @@ import { ListOptionsUser } from '../ListOptionsUser';
 
 type Props = {
   options: OptionData[];
-  onClickSelectOption: (idSelected?: string, nameSelected?: string) => void;
   idOptionSelected: string;
   isLoadingOptions: boolean;
+  searchText: string;
+  onClickSelectOption: (idSelected?: string, nameSelected?: string) => void;
 };
 
 export default function WrapperListOptions({
   options = [],
-  onClickSelectOption,
   idOptionSelected = '',
   isLoadingOptions = false,
+  searchText = '',
+  onClickSelectOption,
 }: Props) {
+  const optionsFiltered =
+    searchText === ''
+      ? options
+      : options.filter((option) =>
+          option.text.toLocaleLowerCase().trim().includes(searchText.toLocaleLowerCase().trim()),
+        );
+
   if (isLoadingOptions) {
     return (
       <div className="u-list-options-shadow h-[114px] w-[268px] rounded-lg md:w-[632px] lg:w-[996px]">
@@ -26,7 +35,7 @@ export default function WrapperListOptions({
   return (
     <div className="u-list-options-shadow h-[114px] w-[268px] rounded-lg p-2 md:w-[632px] lg:w-[996px]">
       <ListOptionsUser
-        options={options}
+        options={optionsFiltered}
         onClickSelectOption={onClickSelectOption}
         idOptionSelected={idOptionSelected}
       />
