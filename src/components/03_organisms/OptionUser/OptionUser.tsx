@@ -1,5 +1,5 @@
 import AppIcon16x16 from '../../00_icons/Icon16x16/Icon16x16';
-import { LabelOption } from '../../01_atoms/LabelOption';
+import { InfoUserProfile } from '../../02_molecules/InfoUserProfile';
 
 type Props = {
   id: string;
@@ -14,10 +14,7 @@ export default function OptionUser({ id = '', text = '', selected = false }: Pro
         id={id}
         className="flex h-[46px] w-[268px] list-none items-center justify-between gap-1 rounded-lg font-extrabold text-gray-800"
       >
-        <div className="flex items-center justify-between gap-2">
-          <AppIcon16x16 iconName="icon-profile" />
-          <LabelOption text={text} selectedItem />
-        </div>
+        <InfoUserProfile selected text={text} />
         <AppIcon16x16 iconName="icon-checkmark" />
       </li>
     );
@@ -28,10 +25,7 @@ export default function OptionUser({ id = '', text = '', selected = false }: Pro
       id={id}
       className="flex h-[46px] w-[268px] list-none items-center justify-between gap-1 rounded-lg text-gray-800"
     >
-      <div className="flex items-center justify-between gap-2">
-        <AppIcon16x16 iconName="icon-profile" className="text-gray-500" />
-        <LabelOption text={text} />
-      </div>
+      <InfoUserProfile text={text} />
     </li>
   );
 }

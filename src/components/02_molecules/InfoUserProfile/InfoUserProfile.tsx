@@ -3,7 +3,7 @@ import { LabelOption } from '../../01_atoms/LabelOption';
 
 type Props = {
   text: string;
-  selected: boolean;
+  selected?: boolean;
 };
 
 export default function InfoUserProfile({ text = '', selected = false }: Props) {
