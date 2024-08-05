@@ -1,4 +1,5 @@
 import AppIcon16x16 from '../../00_icons/Icon16x16/Icon16x16';
+import { LabelOption } from '../../01_atoms/LabelOption';
 
 type Props = {
   id: string;
@@ -15,7 +16,7 @@ export default function OptionUser({ id = '', text = '', selected = false }: Pro
       >
         <div className="flex items-center justify-between gap-2">
           <AppIcon16x16 iconName="icon-profile" />
-          <span className="font-inter">{text}</span>
+          <LabelOption text={text} selectedItem />
         </div>
         <AppIcon16x16 iconName="icon-checkmark" />
       </li>
@@ -29,7 +30,7 @@ export default function OptionUser({ id = '', text = '', selected = false }: Pro
     >
       <div className="flex items-center justify-between gap-2">
         <AppIcon16x16 iconName="icon-profile" className="text-gray-500" />
-        <span className="font-inter">{text}</span>
+        <LabelOption text={text} />
       </div>
     </li>
   );
