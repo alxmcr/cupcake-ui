@@ -47,13 +47,6 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     // handle 'return` on functions or components
     'no-void': 'error',
-    '@typescript-eslint/explicit-function-return-type': [
-      'off',
-      {
-        allowExpressions: false,
-        allowHigherOrderFunctions: false,
-        allowTypedFunctionExpressions: false,
-      },
-    ],
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
 };

@@ -2,14 +2,13 @@ import React from 'react';
 import { OptionData } from '../../../types/appTypes';
 import { ControlComboBox } from '../ControlComboBox';
 import { WrapperListOptions } from '../WrapperListOptions';
-import { LoadingStates } from '../../../types/enumTypes';
 
 type Props = {
   options: OptionData[];
-  statusLoadingOptions: LoadingStates;
+  isLoadingOptions: boolean;
 };
 
-export default function ComboBox({ options = [], statusLoadingOptions = LoadingStates.IDLE }: Props) {
+export default function ComboBox({ options = [], isLoadingOptions = false }: Props) {
   const [searchText, setSearchText] = React.useState('');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
@@ -51,7 +50,12 @@ export default function ComboBox({ options = [], statusLoadingOptions = LoadingS
         captionText="Solo podrás elegir a Victor para continuar."
       />
       {isOpenComboBox ? (
-        <WrapperListOptions options={options} onClick={onClickSelectOption} idOptionSelected={idOptionSelected} />
+        <WrapperListOptions
+          options={options}
+          onClick={onClickSelectOption}
+          idOptionSelected={idOptionSelected}
+          isLoadingOptions={isLoadingOptions}
+        />
       ) : null}
     </div>
   );
