@@ -10,7 +10,10 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    isLoadingOptions: { control: 'boolean' },
+    idOptionSelected: { control: 'text' },
     options: { control: 'object' },
+    onClick: { action: 'onClick' },
   },
 } satisfies Meta<typeof WrapperListOptions>;
 
@@ -18,8 +21,20 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const UserList: Story = {
+export const Default: Story = {
   args: {
     options: mockUsersData,
+    isLoadingOptions: false,
+    idOptionSelected: '',
+    onClick: () => {},
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    options: mockUsersData,
+    isLoadingOptions: true,
+    idOptionSelected: '',
+    onClick: () => {},
   },
 };

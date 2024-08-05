@@ -5,9 +5,10 @@ import { WrapperListOptions } from '../WrapperListOptions';
 
 type Props = {
   options: OptionData[];
+  isLoadingOptions: boolean;
 };
 
-export default function ComboBox({ options = [] }: Props) {
+export default function ComboBox({ options = [], isLoadingOptions = false }: Props) {
   const [searchText, setSearchText] = React.useState('');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
@@ -46,9 +47,15 @@ export default function ComboBox({ options = [] }: Props) {
         onClick={toggleComboBox}
         searchText={searchText}
         onChangeSearchText={onChangeSearchText}
+        captionText="Solo podrás elegir a Victor para continuar."
       />
       {isOpenComboBox ? (
-        <WrapperListOptions options={options} onClick={onClickSelectOption} idOptionSelected={idOptionSelected} />
+        <WrapperListOptions
+          options={options}
+          onClick={onClickSelectOption}
+          idOptionSelected={idOptionSelected}
+          isLoadingOptions={isLoadingOptions}
+        />
       ) : null}
     </div>
   );
