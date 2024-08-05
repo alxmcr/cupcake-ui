@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default function ComboBox({ options = [], isLoadingOptions = false }: Props) {
-  const comboBoxRef = React.useRef();
+  const comboBoxRef = React.useRef<HTMLDivElement>(null);
   const [searchText, setSearchText] = React.useState('');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
@@ -53,8 +53,21 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
     }
   }, [isOpenComboBox, idOptionSelected, nameOptionSelected]);
 
+  React.useEffect(() => {
+    const onMouseDownComboBox = (ev: MouseEvent) => {
+      if (comboBoxRef.current && !comboBoxRef.current.contains(ev.target as Node)) {
+        setIsOpenComboBox(false);
+      }
+    };
+
+    document.addEventListener('mousedown', onMouseDownComboBox);
+
+    // Clean up
+    return () => document.removeEventListener('mousedown', onMouseDownComboBox);
+  }, []);
+
   return (
-    <div className="border border-red-400">
+    <div className="border border-red-400" ref={comboBoxRef}>
       <ControlComboBox
         id="ControlComboBox-text"
         inputType="text"
