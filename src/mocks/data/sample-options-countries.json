@@ -1,52 +1,52 @@
 [
-    {
-        "id": "US",
-        "value": "US",
-        "text": "United States"
-    },
-    {
-        "id": "CA",
-        "value": "CA",
-        "text": "Canada"
-    },
-    {
-        "id": "GB",
-        "value": "GB",
-        "text": "United Kingdom"
-    },
-    {
-        "id": "AU",
-        "value": "AU",
-        "text": "Australia"
-    },
-    {
-        "id": "DE",
-        "value": "DE",
-        "text": "Germany"
-    },
-    {
-        "id": "FR",
-        "value": "FR",
-        "text": "France"
-    },
-    {
-        "id": "JP",
-        "value": "JP",
-        "text": "Japan"
-    },
-    {
-        "id": "IN",
-        "value": "IN",
-        "text": "India"
-    },
-    {
-        "id": "BR",
-        "value": "BR",
-        "text": "Brazil"
-    },
-    {
-        "id": "ZA",
-        "value": "ZA",
-        "text": "South Africa"
-    }
+  {
+    "id": "US",
+    "value": "US",
+    "text": "United States"
+  },
+  {
+    "id": "CA",
+    "value": "CA",
+    "text": "Canada"
+  },
+  {
+    "id": "GB",
+    "value": "GB",
+    "text": "United Kingdom"
+  },
+  {
+    "id": "AU",
+    "value": "AU",
+    "text": "Australia"
+  },
+  {
+    "id": "DE",
+    "value": "DE",
+    "text": "Germany"
+  },
+  {
+    "id": "FR",
+    "value": "FR",
+    "text": "France"
+  },
+  {
+    "id": "JP",
+    "value": "JP",
+    "text": "Japan"
+  },
+  {
+    "id": "IN",
+    "value": "IN",
+    "text": "India"
+  },
+  {
+    "id": "BR",
+    "value": "BR",
+    "text": "Brazil"
+  },
+  {
+    "id": "ZA",
+    "value": "ZA",
+    "text": "South Africa"
+  }
 ]

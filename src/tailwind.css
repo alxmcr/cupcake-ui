@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scrollbar */
 @layer components {
   /* For webkit browsers (Chrome, Safari) */
   ::-webkit-scrollbar {
@@ -20,15 +21,23 @@
 
   ::-webkit-scrollbar-thumb {
     background: theme('colors.cyan.700'); /* Color of the scrollbar handle */
+    border-radius: 8px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
     background: #555; /* Color of the scrollbar handle on hover */
+    cursor: pointer;
   }
 
   /* For Firefox */
   .scrollable-element {
     scrollbar-width: thin; /* Width of the scrollbar */
     scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar handle and track */
+  }
+}
+
+@layer components {
+  .u-list-options-shadow {
+    box-shadow: 0 4px 8px rgba(64, 67, 68, 24%);
   }
 }

@@ -7,5 +7,9 @@
     "trailingComma": "all",
     "plugins": [
         "prettier-plugin-tailwindcss"
+    ],
+    "tailwindPreserveWhitespace": true,
+    "tailwindAttributes": [
+        "font-inter"
     ]
 }

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ListOptionsUser from './ListOptionsUser';
+import WrapperListOptions from './WrapperListOptions';
 import mockUsersData from '../../../mocks/data/sample-options-user.json';
 
 const meta = {
-  title: 'Organisms/ListOptionsUser',
-  component: ListOptionsUser,
+  title: 'Organisms/WrapperListOptions',
+  component: WrapperListOptions,
   parameters: {
     layout: 'centered',
   },
@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     options: { control: 'object' },
   },
-} satisfies Meta<typeof ListOptionsUser>;
+} satisfies Meta<typeof WrapperListOptions>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
