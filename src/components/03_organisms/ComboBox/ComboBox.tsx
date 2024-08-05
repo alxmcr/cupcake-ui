@@ -82,9 +82,10 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
       {isOpenComboBox ? (
         <WrapperListOptions
           options={options}
-          onClickSelectOption={onClickSelectOption}
-          idOptionSelected={idOptionSelected}
           isLoadingOptions={isLoadingOptions}
+          searchText={searchText}
+          idOptionSelected={idOptionSelected}
+          onClickSelectOption={onClickSelectOption}
         />
       ) : null}
     </div>

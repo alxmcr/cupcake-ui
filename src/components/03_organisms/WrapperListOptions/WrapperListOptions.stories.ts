@@ -21,12 +21,39 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Default: Story = {
+export const ManyUsers: Story = {
   args: {
     options: mockUsersData,
     isLoadingOptions: false,
     idOptionSelected: '',
     onClickSelectOption: () => {},
+    searchText: '',
+  },
+};
+
+export const OneUser: Story = {
+  args: {
+    options: [
+      {
+        id: 'user-001',
+        value: 'user-001',
+        text: 'Victor Díaz',
+      },
+    ],
+    isLoadingOptions: false,
+    idOptionSelected: '',
+    onClickSelectOption: () => {},
+    searchText: '',
+  },
+};
+
+export const Empty: Story = {
+  args: {
+    options: [],
+    isLoadingOptions: false,
+    idOptionSelected: '',
+    onClickSelectOption: () => {},
+    searchText: '',
   },
 };
 
@@ -36,5 +63,6 @@ export const Loading: Story = {
     isLoadingOptions: true,
     idOptionSelected: '',
     onClickSelectOption: () => {},
+    searchText: '',
   },
 };
