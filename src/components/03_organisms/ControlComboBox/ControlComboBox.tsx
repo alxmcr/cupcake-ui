@@ -6,6 +6,9 @@ type Props = {
   name: string;
   readOnly?: boolean;
   labelText: string;
+  onClick: () => void;
+  searchText: string;
+  onChangeSearchText: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function ControlComboBox({
@@ -14,9 +17,12 @@ export default function ControlComboBox({
   inputType = 'text',
   labelText = '',
   readOnly = false,
+  searchText = '',
+  onChangeSearchText,
+  onClick,
 }: Props) {
   return (
-    <div className="relative">
+    <div className="relative w-[268px]" onClick={onClick}>
       <input
         type={inputType}
         id={id}
@@ -24,6 +30,9 @@ export default function ControlComboBox({
         className="peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-gray-900 focus:border-cyan-900 focus:outline-none focus:ring-0 "
         placeholder=" "
         readOnly={readOnly}
+        autoComplete="off"
+        value={searchText}
+        onChange={onChangeSearchText}
       />
       <label
         htmlFor={id}
