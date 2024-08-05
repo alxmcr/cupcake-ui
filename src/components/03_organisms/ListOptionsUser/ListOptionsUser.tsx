@@ -9,7 +9,7 @@ type Props = {
 
 export default function ListOptionsUser({ options = [], onClick, idOptionSelected = '' }: Props) {
   return (
-    <ol className="flex h-24 w-[252px] flex-col gap-1 overflow-y-auto overflow-x-hidden">
+    <ol className="flex h-24 w-full flex-col gap-1 overflow-y-auto overflow-x-hidden md:w-[616px] lg:w-[970px]">
       {options.map((option) => (
         <OptionUser
           key={option.id}
