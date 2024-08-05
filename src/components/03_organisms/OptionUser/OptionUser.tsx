@@ -14,7 +14,7 @@ export default function OptionUser({ id = '', text = '', selected = false, onCli
   return (
     <li
       id={id}
-      className="flex h-[30px] w-full cursor-pointer list-none items-center justify-between gap-1 rounded-lg border p-4 md:w-[616px] lg:w-[980px]"
+      className="flex h-[30px] w-full cursor-pointer list-none items-center justify-between gap-1 rounded-lg p-4 md:w-[616px] lg:w-[980px]"
       onClick={onClick}
     >
       <InfoUserProfile selected={selected} text={text} />
