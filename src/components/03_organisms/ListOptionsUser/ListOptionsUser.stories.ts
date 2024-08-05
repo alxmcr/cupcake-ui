@@ -11,6 +11,8 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     options: { control: 'object' },
+    idOptionSelected: { control: 'text' },
+    onClickSelectOption: { action: 'onClickSelectOption' },
   },
 } satisfies Meta<typeof ListOptionsUser>;
 
@@ -21,5 +23,7 @@ type Story = StoryObj<typeof meta>;
 export const UserList: Story = {
   args: {
     options: mockUsersData,
+    idOptionSelected: '',
+    onClickSelectOption: () => {},
   },
 };

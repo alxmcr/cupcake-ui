@@ -14,11 +14,22 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
   const [isOpenComboBox, setIsOpenComboBox] = React.useState(false);
 
+  const onClickControlComboBox = (inputTextRef: React.RefObject<HTMLInputElement>) => {
+    if (inputTextRef.current) {
+      // Focus
+      inputTextRef.current.focus();
+
+      if (!isOpenComboBox) {
+        setIsOpenComboBox(true);
+      } else {
+        setIsOpenComboBox(false);
+      }
+    }
+  };
+
   const onChangeSearchText = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(ev.target.value);
   };
-
-  const toggleComboBox = () => setIsOpenComboBox((prevIsOpen) => !prevIsOpen);
 
   const onClickSelectOption = (idSelected = '', nameSelected = '') => {
     setIdOptionSelected(idSelected);
@@ -43,16 +54,16 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
         id="ControlComboBox-text"
         inputType="text"
         labelText="Elige un usuario"
-        name="user-name"
-        onClick={toggleComboBox}
-        searchText={searchText}
-        onChangeSearchText={onChangeSearchText}
         captionText="Solo podrás elegir a Victor para continuar."
+        name="user-name"
+        searchText={searchText}
+        onClickControlComboBox={onClickControlComboBox}
+        onChangeSearchText={onChangeSearchText}
       />
       {isOpenComboBox ? (
         <WrapperListOptions
           options={options}
-          onClick={onClickSelectOption}
+          onClickSelectOption={onClickSelectOption}
           idOptionSelected={idOptionSelected}
           isLoadingOptions={isLoadingOptions}
         />

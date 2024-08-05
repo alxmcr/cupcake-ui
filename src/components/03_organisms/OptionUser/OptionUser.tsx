@@ -5,15 +5,17 @@ type Props = {
   id: string;
   text: string;
   selected: boolean;
-  onClick: (idSelected?: string, nameSelected?: string) => void;
+  onClickSelectOption: (idSelected?: string, nameSelected?: string) => void;
 };
 
-export default function OptionUser({ id = '', text = '', selected = false, onClick }: Props) {
+export default function OptionUser({ id = '', text = '', selected = false, onClickSelectOption }: Props) {
+  const onClick = () => onClickSelectOption(id, text);
+
   return (
     <li
       id={id}
       className="flex h-[46px] w-[252px] cursor-pointer list-none items-center justify-between gap-1 rounded-lg p-4"
-      onClick={() => onClick(id, text)}
+      onClick={onClick}
     >
       <InfoUserProfile selected={selected} text={text} />
       {selected ? <AppIcon16x16 iconName="icon-checkmark" className="text-cyan-700" /> : null}
