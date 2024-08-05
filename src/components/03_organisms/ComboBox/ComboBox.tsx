@@ -9,10 +9,13 @@ type Props = {
 };
 
 export default function ComboBox({ options = [], isLoadingOptions = false }: Props) {
+  const comboBoxRef = React.useRef();
   const [searchText, setSearchText] = React.useState('');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
   const [isOpenComboBox, setIsOpenComboBox] = React.useState(false);
+
+  const onBlurComboBox = () => {};
 
   const onClickControlComboBox = (inputTextRef: React.RefObject<HTMLInputElement>) => {
     if (inputTextRef.current) {
@@ -22,22 +25,6 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
         setIsOpenComboBox(true);
       } else {
         inputTextRef.current.blur();
-        setIsOpenComboBox(false);
-      }
-    }
-  };
-
-  const onBlurControlComboBox = () => {
-    console.log('blur', searchText);
-    const isOptionSelected = idOptionSelected !== '' && nameOptionSelected !== '' && searchText !== '';
-
-    if (idOptionSelected !== '' && nameOptionSelected !== '') {
-      if (searchText !== '') {
-      }
-    }
-
-    if (isOpenComboBox) {
-      if (isOptionSelected) {
         setIsOpenComboBox(false);
       }
     }
@@ -67,7 +54,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   }, [isOpenComboBox, idOptionSelected, nameOptionSelected]);
 
   return (
-    <div>
+    <div className="border border-red-400">
       <ControlComboBox
         id="ControlComboBox-text"
         inputType="text"
@@ -77,7 +64,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
         searchText={searchText}
         onClickControlComboBox={onClickControlComboBox}
         onChangeSearchText={onChangeSearchText}
-        onBlurControlComboBox={onBlurControlComboBox}
+        onBlurComboBox={onBlurComboBox}
       />
       {isOpenComboBox ? (
         <WrapperListOptions
