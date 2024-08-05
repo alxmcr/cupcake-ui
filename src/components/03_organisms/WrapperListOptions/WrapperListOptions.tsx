@@ -3,15 +3,14 @@ import { ListOptionsUser } from '../ListOptionUser';
 
 type Props = {
   options: OptionData[];
+  onClick: (idSelected?: string, nameSelected?: string) => void;
+  idOptionSelected: string;
 };
 
-//  box-shadow: 0 4px 8px rgba(64, 67, 68, 24%);
-// shadow-[0px_4px_8px_0px_rgba(64, 67, 68, 24%)]
-
-export default function WrapperListOptions({ options = [] }: Props) {
+export default function WrapperListOptions({ options = [], onClick, idOptionSelected = '' }: Props) {
   return (
     <div className="u-list-options-shadow h-[114px] w-[268px] rounded-lg p-2">
-      <ListOptionsUser options={options} />
+      <ListOptionsUser options={options} onClick={onClick} idOptionSelected={idOptionSelected} />
     </div>
   );
 }
