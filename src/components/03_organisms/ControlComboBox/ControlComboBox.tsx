@@ -1,14 +1,16 @@
 import { Icon20x20 } from '../../00_icons/Icon20x20';
+import { Caption } from '../../01_atoms/Caption';
 
 type Props = {
   inputType: 'text' | 'email' | 'password' | 'search';
   id: string;
   name: string;
   readOnly?: boolean;
+  captionText: string;
   labelText: string;
-  onClick: () => void;
   searchText: string;
   onChangeSearchText: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  onClick: () => void;
 };
 
 export default function ControlComboBox({
@@ -17,6 +19,7 @@ export default function ControlComboBox({
   inputType = 'text',
   labelText = '',
   readOnly = false,
+  captionText = '',
   searchText = '',
   onChangeSearchText,
   onClick,
@@ -34,6 +37,7 @@ export default function ControlComboBox({
         value={searchText}
         onChange={onChangeSearchText}
       />
+      <Caption text={captionText} />
       <label
         htmlFor={id}
         className="absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-cyan-900 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 "

@@ -14,6 +14,10 @@ const meta = {
     name: { control: 'text' },
     readOnly: { control: 'boolean' },
     labelText: { control: 'text' },
+    captionText: { control: 'text' },
+    searchText: { control: 'text' },
+    onChangeSearchText: { action: 'onChangeSearchText' },
+    onClick: { action: 'onClick' },
   },
 } satisfies Meta<typeof ControlComboBox>;
 
@@ -28,5 +32,9 @@ export const Text: Story = {
     name: 'user-name',
     readOnly: false,
     labelText: 'Elige un usuario',
+    captionText: 'Solo podrás elegir a Victor para continuar.',
+    searchText: '',
+    onChangeSearchText: () => {},
+    onClick: () => {},
   },
 };

@@ -46,6 +46,7 @@ export default function ComboBox({ options = [] }: Props) {
         onClick={toggleComboBox}
         searchText={searchText}
         onChangeSearchText={onChangeSearchText}
+        captionText="Solo podrás elegir a Victor para continuar."
       />
       {isOpenComboBox ? (
         <WrapperListOptions options={options} onClick={onClickSelectOption} idOptionSelected={idOptionSelected} />
