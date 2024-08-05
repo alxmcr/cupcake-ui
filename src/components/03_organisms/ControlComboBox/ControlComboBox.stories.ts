@@ -17,7 +17,7 @@ const meta = {
     captionText: { control: 'text' },
     searchText: { control: 'text' },
     onChangeSearchText: { action: 'onChangeSearchText' },
-    onClick: { action: 'onClick' },
+    onClickControlComboBox: { action: 'onClickControlComboBox' },
   },
 } satisfies Meta<typeof ControlComboBox>;
 
@@ -35,6 +35,6 @@ export const Text: Story = {
     captionText: 'Solo podrás elegir a Victor para continuar.',
     searchText: '',
     onChangeSearchText: () => {},
-    onClick: () => {},
+    onClickControlComboBox: () => {},
   },
 };

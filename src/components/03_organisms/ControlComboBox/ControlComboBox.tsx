@@ -1,3 +1,4 @@
+import React from 'react';
 import { Icon20x20 } from '../../00_icons/Icon20x20';
 import { Caption } from '../../01_atoms/Caption';
 
@@ -10,7 +11,7 @@ type Props = {
   labelText: string;
   searchText: string;
   onChangeSearchText: (ev: React.ChangeEvent<HTMLInputElement>) => void;
-  onClick: () => void;
+  onClickControlComboBox: (inputTextRef: React.RefObject<HTMLInputElement>) => void;
 };
 
 export default function ControlComboBox({
@@ -22,11 +23,16 @@ export default function ControlComboBox({
   captionText = '',
   searchText = '',
   onChangeSearchText,
-  onClick,
+  onClickControlComboBox,
 }: Props) {
+  const inputTextRef = React.useRef<HTMLInputElement>(null);
+
+  const onClick = () => onClickControlComboBox(inputTextRef);
+
   return (
     <div className="relative w-[268px] md:w-[632px] lg:w-[996px]" onClick={onClick}>
       <input
+        ref={inputTextRef}
         type={inputType}
         id={id}
         name={name}

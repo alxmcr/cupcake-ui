@@ -13,7 +13,7 @@ const meta = {
     isLoadingOptions: { control: 'boolean' },
     idOptionSelected: { control: 'text' },
     options: { control: 'object' },
-    onClick: { action: 'onClick' },
+    onClickSelectOption: { action: 'onClickSelectOption' },
   },
 } satisfies Meta<typeof WrapperListOptions>;
 
@@ -26,7 +26,7 @@ export const Default: Story = {
     options: mockUsersData,
     isLoadingOptions: false,
     idOptionSelected: '',
-    onClick: () => {},
+    onClickSelectOption: () => {},
   },
 };
 
@@ -35,6 +35,6 @@ export const Loading: Story = {
     options: mockUsersData,
     isLoadingOptions: true,
     idOptionSelected: '',
-    onClick: () => {},
+    onClickSelectOption: () => {},
   },
 };
