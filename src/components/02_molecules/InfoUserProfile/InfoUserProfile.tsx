@@ -8,14 +8,14 @@ type Props = {
 
 export default function InfoUserProfile({ text = '', selected = false }: Props) {
   if (selected) {
-    <div className="flex items-center justify-between gap-2 text-gray-800">
+    <div className="flex items-center justify-between gap-2">
       <AppIcon16x16 iconName="icon-profile" />
-      <LabelOption text={text} />
+      <LabelOption selectedItem text={text} />
     </div>;
   }
 
   return (
-    <div className="flex items-center justify-between gap-2 text-gray-500">
+    <div className="flex items-center justify-between gap-2">
       <AppIcon16x16 iconName="icon-profile" />
       <LabelOption text={text} />
     </div>

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import OptionUser from './OptionUser';
 
 const meta = {
-  title: 'Molecules/OptionUser',
+  title: 'Organisms/OptionUser',
   component: OptionUser,
   parameters: {
     layout: 'centered',
