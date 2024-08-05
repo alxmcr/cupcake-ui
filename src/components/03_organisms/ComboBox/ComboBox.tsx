@@ -1,5 +1,6 @@
 import React from 'react';
 import { OptionData } from '../../../types/appTypes';
+import { ControlComboBox } from '../ControlComboBox';
 import { WrapperListOptions } from '../WrapperListOptions';
 
 type Props = {
@@ -7,14 +8,14 @@ type Props = {
 };
 
 export default function ComboBox({ options = [] }: Props) {
-  const [comboBoxText, setComboBoxText] = React.useState('Open combobox');
+  const [comboBoxText, setComboBoxText] = React.useState('Elige un usuario');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
   const [isOpenComboBox, setIsOpenComboBox] = React.useState(false);
 
   const toggleComboBox = () => setIsOpenComboBox((prevIsOpen) => !prevIsOpen);
 
-  const onClick = (idSelected = '', nameSelected = '') => {
+  const onClickSelectOption = (idSelected = '', nameSelected = '') => {
     setIdOptionSelected(idSelected);
     setNameOptionSelected(nameSelected);
     setIsOpenComboBox(false);
@@ -25,18 +26,24 @@ export default function ComboBox({ options = [] }: Props) {
       setComboBoxText(nameOptionSelected);
     } else {
       if (isOpenComboBox) {
-        setComboBoxText('Close combobox');
+        setComboBoxText('Elige un usuario');
       } else {
-        setComboBoxText('Open combobox');
+        setComboBoxText('Elige un usuario');
       }
     }
   }, [isOpenComboBox, idOptionSelected, nameOptionSelected]);
 
   return (
     <div>
-      <div onClick={toggleComboBox}>{comboBoxText}</div>
+      <ControlComboBox
+        id="ControlComboBox-text"
+        inputType="text"
+        labelText={comboBoxText}
+        name="user-name"
+        onClick={toggleComboBox}
+      />
       {isOpenComboBox ? (
-        <WrapperListOptions options={options} onClick={onClick} idOptionSelected={idOptionSelected} />
+        <WrapperListOptions options={options} onClick={onClickSelectOption} idOptionSelected={idOptionSelected} />
       ) : null}
     </div>
   );
