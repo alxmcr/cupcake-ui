@@ -9,8 +9,8 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    htmlFor: { control: 'text' },
     text: { control: 'text' },
-    floating: { control: 'boolean' },
   },
 } satisfies Meta<typeof LabelFlotating>;
 
@@ -20,14 +20,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
+    htmlFor: 'input-user',
     text: 'Elige un usuario',
-    floating: false,
-  },
-};
-
-export const Floating: Story = {
-  args: {
-    text: 'Elige un usuario',
-    floating: true,
   },
 };

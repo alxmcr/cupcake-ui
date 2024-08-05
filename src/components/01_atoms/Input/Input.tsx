@@ -4,11 +4,11 @@ type Props = {
   type: 'text' | 'email' | 'password' | 'search';
   name: string;
   id: string;
-  placeholder: string;
+  placeholder?: string;
   readOnly?: boolean;
 };
 
-export default function Input({ type = 'text', name = '', id = '', placeholder = '', readOnly = false }: Props) {
+export default function Input({ type = 'text', name = '', id = '', placeholder = ' ', readOnly = false }: Props) {
   const [inputValue, setInputValue] = React.useState('');
 
   const onChange = (ev: React.ChangeEvent<HTMLInputElement>) => setInputValue(ev.target.value);
@@ -16,14 +16,13 @@ export default function Input({ type = 'text', name = '', id = '', placeholder =
   return (
     <input
       type={type}
-      name={name}
       id={id}
+      name={name}
+      className="peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-black focus:border-cyan-900 focus:outline-none focus:ring-0 "
       placeholder={placeholder}
-      readOnly={readOnly}
       value={inputValue}
       onChange={onChange}
-      autoComplete="off"
-      className="h-[38px] w-[268px] rounded-lg border border-gray-300 bg-white px-4 text-black outline-none focus:border-cyan-900"
+      readOnly={readOnly}
     />
   );
 }
