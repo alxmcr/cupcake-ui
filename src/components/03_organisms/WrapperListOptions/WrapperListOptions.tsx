@@ -26,7 +26,13 @@ export default function WrapperListOptions({
           option.text.toLocaleLowerCase().trim().includes(searchText.toLocaleLowerCase().trim()),
         );
 
-  const optionsToRender = isFiltering ? optionsFiltered : options;
+  const optionsToSort = isFiltering ? optionsFiltered : options;
+
+  const optionsToRender = optionsToSort.sort((optionA, optionB) => {
+    return optionA.text.localeCompare(optionB.text, undefined, {
+      sensitivity: 'base',
+    });
+  });
 
   if (isLoadingOptions) {
     return (
