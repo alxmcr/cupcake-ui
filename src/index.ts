@@ -15,3 +15,4 @@ export { default as FormFieldFloating } from './components/02_molecules/FormFiel
 export { default as WrapperLabelFloating } from './components/02_molecules/WrapperLabelFloating/WrapperLabelFloating';
 export { default as Icon16x16 } from './components/00_icons/Icon16x16/Icon16x16';
 export { default as Icon20x20 } from './components/00_icons/Icon20x20/Icon20x20';
+export { default as WrapperIconFloating } from './components/02_molecules/WrapperIconFloating/WrapperIconFloating';

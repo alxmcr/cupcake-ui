@@ -19,8 +19,6 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   const [optionSelected, setOptionSelected] = React.useState<OptionData | null>(null);
   const [isOpenComboBox, setIsOpenComboBox] = React.useState(false);
 
-  const onBlurComboBox = () => {};
-
   const onClickControlComboBox = (inputTextRef: React.RefObject<HTMLInputElement>) => {
     if (inputTextRef.current) {
       // Focus
@@ -103,7 +101,6 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
         searchText={searchText}
         onClickControlComboBox={onClickControlComboBox}
         onChangeSearchText={onChangeSearchText}
-        onBlurComboBox={onBlurComboBox}
       />
       {isOpenComboBox ? (
         <WrapperListOptions
