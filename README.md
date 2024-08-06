@@ -36,6 +36,21 @@ A design system for a fintech startup that is changing the world.
 
 **Server:** Vite.js
 
+## Storybook
+
+- [Storybook: Github Page](https://alxmcr.github.io/cupcake-ui/?path=/docs/organisms-combobox--docs)
+- [Cupcake UI - Storybook at Chromatic\*](https://66b1bf8878373c966dd1bcab-glgfaoymye.chromatic.com/?path=/docs/configure-your-project--docs)
+
+(\*) Chromatic: you need to create an account at [chromatic.com](https://www.chromatic.com/)
+
+## Publish package
+
+- GitHub package
+
+![GitHub package](https://my-cupcake-ui-001.netlify.app/screenshots-publish-package/01-github-package-published.png)
+
+- NPM package
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your `.env` or `.env.local` file: `VITE_APP_PORT`
@@ -135,13 +150,6 @@ npm run dev
 ```
 
 ![Box component with your ComboBox](https://my-cupcake-ui-001.netlify.app/screenshots-using/01-using-combobox.png)
-
-## Storybook
-
-- [Storybook: Github Page](https://alxmcr.github.io/cupcake-ui/?path=/docs/organisms-combobox--docs)
-- [Cupcake UI - Storybook at Chromatic\*](https://66b1bf8878373c966dd1bcab-glgfaoymye.chromatic.com/?path=/docs/configure-your-project--docs)
-
-(\*) Chromatic: you need to create an account at [chromatic.com](https://www.chromatic.com/)
 
 ## Authors
 
