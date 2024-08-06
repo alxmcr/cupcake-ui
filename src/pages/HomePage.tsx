@@ -1,3 +1,4 @@
+import { Input } from '../components/01_atoms/Input';
 import { InfoUserProfile } from '../components/02_molecules/InfoUserProfile';
 import { ComboBox } from '../components/03_organisms/ComboBox';
 
@@ -5,6 +6,7 @@ export default function HomePage() {
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-3">
       <h1 className="text-3xl font-bold text-pink-400 underline">Hello world!</h1>
+      <Input id="input-text" name="user-name" placeholder="Elige un usuario" type="text" value="" />
       <InfoUserProfile text="Victor Díaz" />
       <ComboBox
         options={[

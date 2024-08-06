@@ -13,7 +13,7 @@ const meta = {
     id: { control: 'text' },
     name: { control: 'text' },
     placeholder: { control: 'text' },
-    readOnly: { control: 'boolean' },
+    onChange: { action: 'onChange' },
   },
 } satisfies Meta<typeof Input>;
 
@@ -27,6 +27,6 @@ export const Text: Story = {
     id: 'input-text',
     name: 'user-name',
     placeholder: 'Elige un usuario',
-    readOnly: false,
+    onChange: undefined,
   },
 };
