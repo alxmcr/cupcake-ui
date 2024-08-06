@@ -1,8 +1,8 @@
 {
-  "name": "cupcake-ui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@alxmcr/cupcake-ui-ale-ds",
+  "version": "0.0.1",
   "type": "module",
+  "repository": "https://github.com/alxmcr/cupcake-ui-ale",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
