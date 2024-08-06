@@ -16,6 +16,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   const comboBoxRef = React.useRef<HTMLDivElement>(null);
   const [isFiltering, setIsFiltering] = React.useState(false);
   const [searchText, setSearchText] = React.useState('');
+  const [triggerSelectOption, setTriggerSelectOption] = React.useState(false);
   const [optionSelected, setOptionSelected] = React.useState<OptionData | null>(null);
   const [isOpenComboBox, setIsOpenComboBox] = React.useState(false);
 
@@ -38,20 +39,33 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   };
 
   const onSelectOption = (optionWasSelected: OptionData) => {
-    setTimeout(() => {
-      setOptionSelected(optionWasSelected);
-      setSearchText(optionWasSelected?.text);
-      setIsFiltering(false);
-      // Put on top the OptionSelected
-      const removeOptionSelectedList = listOptions.filter((option) => option.id !== optionWasSelected.id);
-      const sortRemoveOptionSelectedList = sortByText(removeOptionSelectedList);
-      const listWithOptionSelectedOnTop = [optionWasSelected, ...sortRemoveOptionSelectedList];
+    setTriggerSelectOption(true);
+    // Actions
+    setOptionSelected(optionWasSelected);
+    setSearchText(optionWasSelected?.text);
+    setIsFiltering(false);
+    // Put on top the OptionSelected
+    const removeOptionSelectedList = listOptions.filter((option) => option.id !== optionWasSelected.id);
+    const sortRemoveOptionSelectedList = sortByText(removeOptionSelectedList);
+    const listWithOptionSelectedOnTop = [optionWasSelected, ...sortRemoveOptionSelectedList];
 
-      setListOptions(listWithOptionSelectedOnTop);
-      // Close
-      setIsOpenComboBox(false);
-    }, TIMEOUT_SELECT_OPTION_MS);
+    setListOptions(listWithOptionSelectedOnTop);
   };
+
+  React.useEffect(() => {
+    let timer: NodeJS.Timeout;
+
+    if (triggerSelectOption) {
+      timer = setTimeout(() => {
+        setTriggerSelectOption(false);
+
+        // Actions
+        setIsOpenComboBox(false);
+      }, TIMEOUT_SELECT_OPTION_MS);
+    }
+
+    return () => clearTimeout(timer);
+  }, [triggerSelectOption, listOptions, optionSelected?.id, optionSelected?.text]);
 
   React.useEffect(() => {
     const isOptionSelected = optionSelected?.id !== '' && optionSelected?.text !== '';
