@@ -151,6 +151,26 @@ npm run dev
 
 ![Box component with your ComboBox](https://my-cupcake-ui-001.netlify.app/screenshots-using/01-using-combobox.png)
 
+## Discoveries
+
+- Multiple color palette.
+- Different spacing: line-height and letter-spacing.
+- Research about more box-shadow best practices with Tailwind.
+- Research more about naming conventions or complete the missing information.
+- Reduce scope about scrollbar and styles definition.
+
+## Next releases
+
+- Add more unit testing with React Testing Library.
+- Improve components considering a11y.
+- Enable on components i18n.
+- Tailwind customization.
+- Dark/Light mode.
+- Research, implement multibranding for multiple companies and customers.
+- Add more use cases about components built.
+- After more uses cases, work on integration testing.
+- Research about a customization developers documentation (on top Storybook)
+
 ## Authors
 
 - [Alejandro M. Coca Rojas (@alxmcr)](https://www.github.com/alxmcr)
