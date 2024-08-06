@@ -1,23 +1,23 @@
+import { OptionData } from '../../../types/appTypes';
 import AppIcon16x16 from '../../00_icons/Icon16x16/Icon16x16';
 import { InfoUserProfile } from '../../02_molecules/InfoUserProfile';
 
 type Props = {
-  id: string;
-  text: string;
+  option: OptionData;
   selected: boolean;
-  onClickSelectOption: (idSelected?: string, nameSelected?: string) => void;
+  onSelectOption: (option: OptionData) => void;
 };
 
-export default function OptionUser({ id = '', text = '', selected = false, onClickSelectOption }: Props) {
-  const onClick = () => onClickSelectOption(id, text);
+export default function OptionUser({ option, selected = false, onSelectOption }: Props) {
+  const onClick = () => onSelectOption(option);
 
   return (
     <li
-      id={id}
+      id={option.id}
       className="flex h-[30px] w-full cursor-pointer list-none items-center justify-between gap-1 rounded-lg p-4 md:w-[616px] lg:w-[980px]"
       onClick={onClick}
     >
-      <InfoUserProfile selected={selected} text={text} />
+      <InfoUserProfile selected={selected} text={option.text} />
       {selected ? <AppIcon16x16 iconName="icon-checkmark" className="text-cyan-700" /> : null}
     </li>
   );

@@ -11,11 +11,11 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     isLoadingOptions: { control: 'boolean' },
-    idOptionSelected: { control: 'text' },
+    optionSelected: { control: 'object' },
     isFiltering: { control: 'boolean' },
     searchText: { control: 'text' },
     options: { control: 'object' },
-    onClickSelectOption: { action: 'onClickSelectOption' },
+    onSelectOption: { action: 'onSelectOption' },
   },
 } satisfies Meta<typeof WrapperListOptions>;
 
@@ -28,8 +28,12 @@ export const ManyUsers: Story = {
     options: mockUsersData,
     isLoadingOptions: false,
     isFiltering: false,
-    idOptionSelected: '',
-    onClickSelectOption: () => {},
+    optionSelected: {
+      id: 'user-001',
+      value: 'user-001',
+      text: 'Victor Díaz',
+    },
+    onSelectOption: () => {},
     searchText: '',
   },
 };
@@ -45,8 +49,8 @@ export const OneUser: Story = {
     ],
     isLoadingOptions: false,
     isFiltering: false,
-    idOptionSelected: '',
-    onClickSelectOption: () => {},
+    optionSelected: null,
+    onSelectOption: () => {},
     searchText: '',
   },
 };
@@ -56,8 +60,8 @@ export const Empty: Story = {
     options: [],
     isLoadingOptions: false,
     isFiltering: false,
-    idOptionSelected: '',
-    onClickSelectOption: () => {},
+    optionSelected: null,
+    onSelectOption: () => {},
     searchText: '',
   },
 };
@@ -67,8 +71,8 @@ export const Loading: Story = {
     options: mockUsersData,
     isLoadingOptions: true,
     isFiltering: false,
-    idOptionSelected: '',
-    onClickSelectOption: () => {},
+    optionSelected: null,
+    onSelectOption: () => {},
     searchText: '',
   },
 };

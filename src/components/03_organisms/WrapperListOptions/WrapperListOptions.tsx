@@ -5,28 +5,22 @@ import { ListOptionsUser } from '../ListOptionsUser';
 
 type Props = {
   options: OptionData[];
-  idOptionSelected: string;
+  optionSelected: OptionData | null;
   isLoadingOptions: boolean;
   searchText: string;
   isFiltering: boolean;
-  onClickSelectOption: (idSelected?: string, nameSelected?: string) => void;
+  onSelectOption: (option: OptionData) => void;
 };
 
 export default function WrapperListOptions({
   options = [],
-  idOptionSelected = '',
   isLoadingOptions = false,
   searchText = '',
   isFiltering = false,
-  onClickSelectOption,
+  optionSelected,
+  onSelectOption,
 }: Props) {
   const optionsToSort = isFiltering && searchText !== '' ? filterByText(options, searchText) : options;
-
-  const optionsToRender = optionsToSort.sort((optionA, optionB) => {
-    return optionA.text.localeCompare(optionB.text, undefined, {
-      sensitivity: 'base',
-    });
-  });
 
   if (isLoadingOptions) {
     return (
@@ -39,9 +33,9 @@ export default function WrapperListOptions({
   return (
     <div className="u-list-options-shadow max-h-[126px] w-[268px] rounded-lg p-2 md:w-[632px] lg:w-[996px]">
       <ListOptionsUser
-        options={optionsToRender}
-        onClickSelectOption={onClickSelectOption}
-        idOptionSelected={idOptionSelected}
+        options={optionsToSort}
+        onSelectOption={onSelectOption}
+        idOptionSelected={optionSelected ? optionSelected.id : ''}
       />
     </div>
   );
