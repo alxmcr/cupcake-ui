@@ -1,8 +1,8 @@
 import React from 'react';
-import { Icon20x20 } from '../../00_icons/Icon20x20';
 import { Caption } from '../../01_atoms/Caption';
-import { LabelFlotating } from '../../01_atoms/LabelFlotating';
 import { Input } from '../../01_atoms/Input';
+import { LabelFlotating } from '../../01_atoms/LabelFlotating';
+import { WrapperIconFloating } from '../../02_molecules/WrapperIconFloating';
 
 type Props = {
   inputType: 'text' | 'email' | 'password' | 'search';
@@ -46,9 +46,7 @@ export default function ControlComboBox({
         />
         <LabelFlotating htmlFor={id} text={labelText} />
 
-        <div className="absolute right-4 top-[9px] size-[20px] text-gray-500 duration-300 peer-focus:peer-placeholder-shown:rotate-180 peer-focus:peer-placeholder-shown:text-gray-600">
-          <Icon20x20 iconName="icon-arrow-down" />
-        </div>
+        <WrapperIconFloating />
       </div>
       <Caption text={captionText} />
     </div>
