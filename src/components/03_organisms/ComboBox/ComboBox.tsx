@@ -10,6 +10,7 @@ type Props = {
 
 export default function ComboBox({ options = [], isLoadingOptions = false }: Props) {
   const comboBoxRef = React.useRef<HTMLDivElement>(null);
+  const [isFiltering, setIsFiltering] = React.useState(false);
   const [searchText, setSearchText] = React.useState('');
   const [idOptionSelected, setIdOptionSelected] = React.useState('');
   const [nameOptionSelected, setNameOptionSelected] = React.useState('');
@@ -32,12 +33,16 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
 
   const onChangeSearchText = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(ev.target.value);
+    setIsFiltering(true);
   };
 
   const onClickSelectOption = (idSelected = '', nameSelected = '') => {
     setIdOptionSelected(idSelected);
     setNameOptionSelected(nameSelected);
     setSearchText(nameSelected);
+    setIsFiltering(false);
+
+    // Open
     setIsOpenComboBox(false);
   };
 
@@ -84,6 +89,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
           options={options}
           isLoadingOptions={isLoadingOptions}
           searchText={searchText}
+          isFiltering={isFiltering}
           idOptionSelected={idOptionSelected}
           onClickSelectOption={onClickSelectOption}
         />

@@ -12,6 +12,8 @@ const meta = {
   argTypes: {
     isLoadingOptions: { control: 'boolean' },
     idOptionSelected: { control: 'text' },
+    isFiltering: { control: 'boolean' },
+    searchText: { control: 'text' },
     options: { control: 'object' },
     onClickSelectOption: { action: 'onClickSelectOption' },
   },
@@ -25,6 +27,7 @@ export const ManyUsers: Story = {
   args: {
     options: mockUsersData,
     isLoadingOptions: false,
+    isFiltering: false,
     idOptionSelected: '',
     onClickSelectOption: () => {},
     searchText: '',
@@ -41,6 +44,7 @@ export const OneUser: Story = {
       },
     ],
     isLoadingOptions: false,
+    isFiltering: false,
     idOptionSelected: '',
     onClickSelectOption: () => {},
     searchText: '',
@@ -51,6 +55,7 @@ export const Empty: Story = {
   args: {
     options: [],
     isLoadingOptions: false,
+    isFiltering: false,
     idOptionSelected: '',
     onClickSelectOption: () => {},
     searchText: '',
@@ -61,6 +66,7 @@ export const Loading: Story = {
   args: {
     options: mockUsersData,
     isLoadingOptions: true,
+    isFiltering: false,
     idOptionSelected: '',
     onClickSelectOption: () => {},
     searchText: '',

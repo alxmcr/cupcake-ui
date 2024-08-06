@@ -7,6 +7,7 @@ type Props = {
   idOptionSelected: string;
   isLoadingOptions: boolean;
   searchText: string;
+  isFiltering: boolean;
   onClickSelectOption: (idSelected?: string, nameSelected?: string) => void;
 };
 
@@ -15,6 +16,7 @@ export default function WrapperListOptions({
   idOptionSelected = '',
   isLoadingOptions = false,
   searchText = '',
+  isFiltering = false,
   onClickSelectOption,
 }: Props) {
   const optionsFiltered =
@@ -23,6 +25,8 @@ export default function WrapperListOptions({
       : options.filter((option) =>
           option.text.toLocaleLowerCase().trim().includes(searchText.toLocaleLowerCase().trim()),
         );
+
+  const optionsToRender = isFiltering ? optionsFiltered : options;
 
   if (isLoadingOptions) {
     return (
@@ -35,7 +39,7 @@ export default function WrapperListOptions({
   return (
     <div className="u-list-options-shadow max-h-[126px] w-[268px] rounded-lg p-2 md:w-[632px] lg:w-[996px]">
       <ListOptionsUser
-        options={optionsFiltered}
+        options={optionsToRender}
         onClickSelectOption={onClickSelectOption}
         idOptionSelected={idOptionSelected}
       />

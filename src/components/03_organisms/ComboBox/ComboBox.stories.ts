@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ComboBox from './ComboBox';
 import mockUsersData from '../../../mocks/data/sample-options-user.json';
-import { LoadingStates } from '../../../types/enumTypes';
+import ComboBox from './ComboBox';
 
 const meta = {
   title: 'Organisms/ComboBox',
@@ -12,7 +11,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     options: { control: 'object' },
-    statusLoadingOptions: { control: 'text' },
+    isLoadingOptions: { control: 'boolean' },
   },
 } satisfies Meta<typeof ComboBox>;
 
@@ -23,13 +22,13 @@ type Story = StoryObj<typeof meta>;
 export const UserListSuccess: Story = {
   args: {
     options: mockUsersData,
-    statusLoadingOptions: LoadingStates.SUCCESS,
+    isLoadingOptions: false,
   },
 };
 
 export const UserListPending: Story = {
   args: {
     options: mockUsersData,
-    statusLoadingOptions: LoadingStates.PENDING,
+    isLoadingOptions: true,
   },
 };
