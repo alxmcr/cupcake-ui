@@ -4,10 +4,8 @@
 name: Cupcake UI - Storybook to GitHub Pages
 
 on:
-  # Event for the workflow to run on
-  push:
-    branches:
-      - 'main' # Replace with the branch you want to deploy from
+  release:
+    types: [created]
 
 permissions:
   contents: read
