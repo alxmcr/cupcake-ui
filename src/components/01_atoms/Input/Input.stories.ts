@@ -26,7 +26,6 @@ export const Text: Story = {
     type: 'text',
     id: 'input-text',
     name: 'user-name',
-    placeholder: 'Elige un usuario',
     onChange: undefined,
   },
 };
