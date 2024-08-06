@@ -132,7 +132,7 @@ npm run dev
 
 ## Demo
 
-[Cupcake UI - Storybook](https://www.chromatic.com/build?appId=)
+[Cupcake UI - Storybook](https://66b1bf8878373c966dd1bcab-glgfaoymye.chromatic.com/?path=/docs/configure-your-project--docs)
 
 ## Authors
 
