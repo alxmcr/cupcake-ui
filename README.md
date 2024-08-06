@@ -156,8 +156,8 @@ npm run dev
 - Multiple color palette.
 - Different spacing: line-height and letter-spacing.
 - Research about more box-shadow best practices with Tailwind.
-- Research more about naming conventions or complete the missing information.
 - Reduce scope about scrollbar and styles definition.
+- Atomic design and naming conventions, we need some research about missing information
 
 ## Next releases
 
