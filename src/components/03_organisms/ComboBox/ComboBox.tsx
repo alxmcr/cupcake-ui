@@ -2,6 +2,7 @@ import React from 'react';
 import { OptionData } from '../../../types/appTypes';
 import { ControlComboBox } from '../ControlComboBox';
 import { WrapperListOptions } from '../WrapperListOptions';
+import { sortByText } from '../../../helpers/optionUserListHelpers';
 
 type Props = {
   options: OptionData[];
@@ -9,11 +10,11 @@ type Props = {
 };
 
 export default function ComboBox({ options = [], isLoadingOptions = false }: Props) {
+  const [listOptions, setListOptions] = React.useState<OptionData[]>(options);
   const comboBoxRef = React.useRef<HTMLDivElement>(null);
   const [isFiltering, setIsFiltering] = React.useState(false);
   const [searchText, setSearchText] = React.useState('');
-  const [idOptionSelected, setIdOptionSelected] = React.useState('');
-  const [nameOptionSelected, setNameOptionSelected] = React.useState('');
+  const [optionSelected, setOptionSelected] = React.useState<OptionData | null>(null);
   const [isOpenComboBox, setIsOpenComboBox] = React.useState(false);
 
   const onBlurComboBox = () => {};
@@ -36,28 +37,33 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
     setIsFiltering(true);
   };
 
-  const onSelectOption = (idSelected = '', nameSelected = '') => {
+  const onSelectOption = (optionWasSelected: OptionData) => {
     setTimeout(() => {
-      setNameOptionSelected(nameSelected);
-      setIdOptionSelected(idSelected);
-      setSearchText(nameSelected);
+      setOptionSelected(optionWasSelected);
+      setSearchText(optionWasSelected?.text);
       setIsFiltering(false);
+      // Put on top the OptionSelected
+      const removeOptionSelectedList = listOptions.filter((option) => option.id !== optionWasSelected.id);
+      const sortRemoveOptionSelectedList = sortByText(removeOptionSelectedList);
+      const listWithOptionSelectedOnTop = [optionWasSelected, ...sortRemoveOptionSelectedList];
+
+      setListOptions(listWithOptionSelectedOnTop);
       // Close
       setIsOpenComboBox(false);
     }, 400);
   };
 
   React.useEffect(() => {
-    const isOptionSelected = idOptionSelected !== '' && nameOptionSelected !== '';
+    const isOptionSelected = optionSelected?.id !== '' && optionSelected?.text !== '';
 
     if (isOptionSelected) {
-      setSearchText(nameOptionSelected);
+      setSearchText(optionSelected?.text ? optionSelected?.text : '');
     } else {
       if (isOpenComboBox) {
         setSearchText('');
       }
     }
-  }, [isOpenComboBox, idOptionSelected, nameOptionSelected]);
+  }, [isOpenComboBox, optionSelected?.id, optionSelected?.text]);
 
   React.useEffect(() => {
     const onMouseDownComboBox = (ev: MouseEvent) => {
@@ -71,6 +77,10 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
     // Clean up
     return () => document.removeEventListener('mousedown', onMouseDownComboBox);
   }, []);
+
+  React.useEffect(() => {
+    setListOptions(sortByText(options));
+  }, [options]);
 
   return (
     <div ref={comboBoxRef}>
@@ -87,11 +97,11 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
       />
       {isOpenComboBox ? (
         <WrapperListOptions
-          options={options}
+          options={listOptions}
           isLoadingOptions={isLoadingOptions}
           searchText={searchText}
           isFiltering={isFiltering}
-          idOptionSelected={idOptionSelected}
+          optionSelected={optionSelected}
           onSelectOption={onSelectOption}
         />
       ) : null}

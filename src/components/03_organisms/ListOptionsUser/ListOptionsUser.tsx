@@ -4,7 +4,7 @@ import { OptionUser } from '../OptionUser';
 type Props = {
   options: OptionData[];
   idOptionSelected: string;
-  onSelectOption: (idSelected?: string, nameSelected?: string) => void;
+  onSelectOption: (option: OptionData) => void;
 };
 
 export default function ListOptionsUser({ options = [], idOptionSelected = '', onSelectOption }: Props) {
@@ -21,8 +21,7 @@ export default function ListOptionsUser({ options = [], idOptionSelected = '', o
       {options.map((option) => (
         <OptionUser
           key={option.id}
-          id={option.id}
-          text={option.text}
+          option={option}
           selected={idOptionSelected !== '' ? idOptionSelected === option.id : false}
           onSelectOption={onSelectOption}
         />

@@ -9,9 +9,8 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    id: { control: 'text' },
-    text: { control: 'text' },
     selected: { control: 'boolean' },
+    option: { control: 'object' },
     onSelectOption: { action: 'onSelectOption' },
   },
 } satisfies Meta<typeof OptionUser>;
@@ -22,8 +21,11 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
-    id: 'user-victor',
-    text: 'Victor Díaz',
+    option: {
+      id: 'user-001',
+      value: 'user-001',
+      text: 'Victor Díaz',
+    },
     selected: false,
     onSelectOption: () => {},
   },
@@ -31,8 +33,11 @@ export const Default: Story = {
 
 export const Selected: Story = {
   args: {
-    id: 'user-victor',
-    text: 'Nicholas Yepes',
+    option: {
+      id: 'user-001',
+      value: 'user-001',
+      text: 'Victor Díaz',
+    },
     selected: true,
     onSelectOption: () => {},
   },
