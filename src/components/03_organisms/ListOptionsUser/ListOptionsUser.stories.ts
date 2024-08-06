@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     options: { control: 'object' },
     idOptionSelected: { control: 'text' },
-    onClickSelectOption: { action: 'onClickSelectOption' },
+    onSelectOption: { action: 'onSelectOption' },
   },
 } satisfies Meta<typeof ListOptionsUser>;
 
@@ -24,7 +24,7 @@ export const ManyUsers: Story = {
   args: {
     options: mockUsersData,
     idOptionSelected: '',
-    onClickSelectOption: () => {},
+    onSelectOption: () => {},
   },
 };
 
@@ -38,7 +38,7 @@ export const OneUser: Story = {
       },
     ],
     idOptionSelected: '',
-    onClickSelectOption: () => {},
+    onSelectOption: () => {},
   },
 };
 
@@ -46,6 +46,6 @@ export const Empty: Story = {
   args: {
     options: [],
     idOptionSelected: '',
-    onClickSelectOption: () => {},
+    onSelectOption: () => {},
   },
 };

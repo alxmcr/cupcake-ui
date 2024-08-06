@@ -5,11 +5,11 @@ type Props = {
   id: string;
   text: string;
   selected: boolean;
-  onClickSelectOption: (idSelected?: string, nameSelected?: string) => void;
+  onSelectOption: (idSelected?: string, nameSelected?: string) => void;
 };
 
-export default function OptionUser({ id = '', text = '', selected = false, onClickSelectOption }: Props) {
-  const onClick = () => onClickSelectOption(id, text);
+export default function OptionUser({ id = '', text = '', selected = false, onSelectOption }: Props) {
+  const onClick = () => onSelectOption(id, text);
 
   return (
     <li

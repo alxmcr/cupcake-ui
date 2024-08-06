@@ -4,10 +4,10 @@ import { OptionUser } from '../OptionUser';
 type Props = {
   options: OptionData[];
   idOptionSelected: string;
-  onClickSelectOption: (idSelected?: string, nameSelected?: string) => void;
+  onSelectOption: (idSelected?: string, nameSelected?: string) => void;
 };
 
-export default function ListOptionsUser({ options = [], idOptionSelected = '', onClickSelectOption }: Props) {
+export default function ListOptionsUser({ options = [], idOptionSelected = '', onSelectOption }: Props) {
   if (options.length === 0) {
     return (
       <div className="flex h-[46px] w-full items-center justify-center md:w-[616px] lg:w-[970px]">
@@ -24,7 +24,7 @@ export default function ListOptionsUser({ options = [], idOptionSelected = '', o
           id={option.id}
           text={option.text}
           selected={idOptionSelected !== '' ? idOptionSelected === option.id : false}
-          onClickSelectOption={onClickSelectOption}
+          onSelectOption={onSelectOption}
         />
       ))}
     </ol>

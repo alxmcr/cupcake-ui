@@ -36,7 +36,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
     setIsFiltering(true);
   };
 
-  const onClickSelectOption = (idSelected = '', nameSelected = '') => {
+  const onSelectOption = (idSelected = '', nameSelected = '') => {
     setTimeout(() => {
       setNameOptionSelected(nameSelected);
       setIdOptionSelected(idSelected);
@@ -92,7 +92,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
           searchText={searchText}
           isFiltering={isFiltering}
           idOptionSelected={idOptionSelected}
-          onClickSelectOption={onClickSelectOption}
+          onSelectOption={onSelectOption}
         />
       ) : null}
     </div>

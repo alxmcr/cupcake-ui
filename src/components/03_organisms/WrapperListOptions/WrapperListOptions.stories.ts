@@ -15,7 +15,7 @@ const meta = {
     isFiltering: { control: 'boolean' },
     searchText: { control: 'text' },
     options: { control: 'object' },
-    onClickSelectOption: { action: 'onClickSelectOption' },
+    onSelectOption: { action: 'onSelectOption' },
   },
 } satisfies Meta<typeof WrapperListOptions>;
 
@@ -29,7 +29,7 @@ export const ManyUsers: Story = {
     isLoadingOptions: false,
     isFiltering: false,
     idOptionSelected: '',
-    onClickSelectOption: () => {},
+    onSelectOption: () => {},
     searchText: '',
   },
 };
@@ -46,7 +46,7 @@ export const OneUser: Story = {
     isLoadingOptions: false,
     isFiltering: false,
     idOptionSelected: '',
-    onClickSelectOption: () => {},
+    onSelectOption: () => {},
     searchText: '',
   },
 };
@@ -57,7 +57,7 @@ export const Empty: Story = {
     isLoadingOptions: false,
     isFiltering: false,
     idOptionSelected: '',
-    onClickSelectOption: () => {},
+    onSelectOption: () => {},
     searchText: '',
   },
 };
@@ -68,7 +68,7 @@ export const Loading: Story = {
     isLoadingOptions: true,
     isFiltering: false,
     idOptionSelected: '',
-    onClickSelectOption: () => {},
+    onSelectOption: () => {},
     searchText: '',
   },
 };
