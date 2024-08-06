@@ -7,7 +7,7 @@ import { SkeletonComboBox } from '../../01_atoms/SkeletonComboBox';
 
 type Props = {
   options: OptionData[];
-  isLoadingOptions: boolean;
+  isLoadingOptions?: boolean;
 };
 
 export default function ComboBox({ options = [], isLoadingOptions = false }: Props) {

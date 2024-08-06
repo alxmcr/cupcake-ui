@@ -8,6 +8,8 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    // Jest
+    jest: true,
   },
   extends: [
     'eslint:recommended',
@@ -38,7 +40,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react', 'react-refresh'],
+  plugins: ['@typescript-eslint', 'react', 'react-refresh', 'testing-library'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react-hooks/rules-of-hooks': 'error',
@@ -48,5 +50,10 @@ module.exports = {
     // handle 'return` on functions or components
     'no-void': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    // testing-library
+    'testing-library/await-async-queries': 'error',
+    'testing-library/no-await-sync-queries': 'error',
+    'testing-library/no-debugging-utils': 'warn',
+    'testing-library/no-dom-import': 'off',
   },
 };
