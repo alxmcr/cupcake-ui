@@ -1,4 +1,4 @@
-![Banner](https://cupcake-ui.netlify.app/banners/01-cupcake-ui-banner.png)
+![Banner](https://my-cupcake-ui-001.netlify.app/banners/01-cupcake-ui-banner.png)
 
 # Cupcake UI
 
@@ -8,27 +8,27 @@ A design system for a fintech startup that is changing the world.
 
 - Storybook home page
 
-![Storybook home page](https://cupcake-ui.netlify.app/screenshots-storybook/01-storybook-home-page.png)
+![Storybook home page](https://my-cupcake-ui-001.netlify.app/screenshots-storybook/01-storybook-home-page.png)
 
 - Atomic design: stories
 
-![Atomic design: stories](https://cupcake-ui.netlify.app/screenshots-storybook/02-atomic-design-stories.png)
+![Atomic design: stories](https://my-cupcake-ui-001.netlify.app/screenshots-storybook/02-atomic-design-stories.png)
 
 - Combobox storybook: default
 
-![Combobox storybook: default](https://cupcake-ui.netlify.app/screenshots-storybook/03-combobox-storybook-default.png)
+![Combobox storybook: default](https://my-cupcake-ui-001.netlify.app/screenshots-storybook/03-combobox-storybook-default.png)
 
 - Combobox storybook: open
 
-![Combobox storybook: open](https://cupcake-ui.netlify.app/screenshots-storybook/04-page-storybook-open.png)
+![Combobox storybook: open](https://my-cupcake-ui-001.netlify.app/screenshots-storybook/04-page-storybook-open.png)
 
 - Combobox storybook: select
 
-![Combobox storybook: select](https://cupcake-ui.netlify.app/screenshots-storybook/05-page-storybook-select.png)
+![Combobox storybook: select](https://my-cupcake-ui-001.netlify.app/screenshots-storybook/05-page-storybook-select.png)
 
 - Combobox storybook: search
 
-![Combobox storybook: search](https://cupcake-ui.netlify.app/screenshots-storybook/06-page-storybook-search.png)
+![Combobox storybook: search](https://my-cupcake-ui-001.netlify.app/screenshots-storybook/06-page-storybook-search.png)
 
 ## Tech Stack
 
@@ -134,7 +134,7 @@ npm run dev
 // http://localhost:5173
 ```
 
-![Box component with your ComboBox](https://cupcake-ui.netlify.app/screenshots-using/01-using-combobox.png)
+![Box component with your ComboBox](https://my-cupcake-ui-001.netlify.app/screenshots-using/01-using-combobox.png)
 
 ## Storybook
 
