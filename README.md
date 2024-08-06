@@ -1,8 +1,8 @@
-![Banner](https://my-cupcake-ui-001.netlify.app/banners/01-cupcake-ui-banner.png)
-
 # Cupcake UI
 
 A design system for a fintech startup that is changing the world.
+
+![Banner](https://my-cupcake-ui-001.netlify.app/banners/01-cupcake-ui-banner.png)
 
 ## Screenshots
 
