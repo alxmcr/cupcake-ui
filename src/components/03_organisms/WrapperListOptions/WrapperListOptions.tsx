@@ -24,14 +24,14 @@ export default function WrapperListOptions({
 
   if (isLoadingOptions) {
     return (
-      <div className="u-list-options-shadow max-h-[126px] w-[268px] rounded-lg bg-white md:w-[632px] lg:w-[996px]">
+      <div className="u-list-options-shadow max-h-[126px] w-[268px] -translate-y-4 rounded-lg bg-white md:w-[632px] lg:w-[996px]">
         <SkeletonListOptionsUser className="max-h-[126px] w-full" />
       </div>
     );
   }
 
   return (
-    <div className="u-list-options-shadow max-h-[126px] w-[268px] rounded-lg bg-white p-2 md:w-[632px] lg:w-[996px]">
+    <div className="u-list-options-shadow max-h-[126px] w-[268px] -translate-y-4 rounded-lg bg-white p-2 md:w-[632px] lg:w-[996px]">
       <ListOptionsUser
         options={optionsToSort}
         onSelectOption={onSelectOption}

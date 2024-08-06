@@ -1,30 +1,143 @@
-# React + TypeScript + Vite
+![Banner](https://cupcake-ui.netlify.app/banners/01-cupcake-ui-banner.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Cupcake UI
 
-Currently, two official plugins are available:
+A design system for a fintech startup that is changing the world.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
 
-## Expanding the ESLint configuration
+- Storybook home page
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Storybook home page](https://cupcake-ui.netlify.app/screenshots-storybook/01-storybook-home-page.png)
 
-- Configure the top-level `parserOptions` property like this:
+- Atomic design: stories
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
+![Atomic design: stories](https://cupcake-ui.netlify.app/screenshots-storybook/02-atomic-design-stories.png)
+
+- Combobox storybook: default
+
+![Combobox storybook: default](https://cupcake-ui.netlify.app/screenshots-storybook/03-combobox-storybook-default.png)
+
+- Combobox storybook: open
+
+![Combobox storybook: open](https://cupcake-ui.netlify.app/screenshots-storybook/04-page-storybook-open.png)
+
+- Combobox storybook: select
+
+![Combobox storybook: select](https://cupcake-ui.netlify.app/screenshots-storybook/05-page-storybook-select.png)
+
+- Combobox storybook: search
+
+![Combobox storybook: search](https://cupcake-ui.netlify.app/screenshots-storybook/06-page-storybook-search.png)
+
+## Tech Stack
+
+**Client:** Typescript, React, React hooks, React Router, TailwindCSS, Storybook
+
+**Server:** Vite.js
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your `.env` or `.env.local` file: `VITE_APP_PORT`
+
+**For example:**
+
+`VITE_APP_PORT=7012`
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/alxmcr/cupcake-ui
+```
+
+Go to the project directory
+
+```bash
+  cd cupcake-ui
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the storybook server
+
+```bash
+  npm run storybook
+```
+
+Start the development server
+
+```bash
+  npm run dev
+```
+
+## Using Cupcake UI: ComboBox
+
+1. Create a React app with Typescript
+
+```bash
+npm create vite@latest
+
+// Project name: app-pastelito
+// other settings
+```
+
+2. Install NPM package: `cupcake-ui`
+
+```bash
+npm install cupcake-ui
+```
+
+3. Create a component on your React app
+
+```
+import { ComboBox } from 'cupcake-ui';
+
+export default function Box() {
+  return (
+    <div>
+      <ComboBox
+        options={[
+          {
+            id: "a1b2c3d4",
+            text: "Alice Johnson",
+            value: "a1b2c3d4",
+          },
+          {
+            id: "e5f6g7h8",
+            text: "Carlos Martinez",
+            value: "e5f6g7h8",
+          },
+        ]}
+      />
+    </div>
+  );
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+4. Start your dev server
+
+```bash
+npm run dev
+
+// http://localhost:5173
+```
+
+![Box component with your ComboBox](https://cupcake-ui.netlify.app/screenshots-using/01-using-combobox.png)
+
+## Demo
+
+[Cupcake UI - Storybook](https://www.chromatic.com/build?appId=)
+
+## Authors
+
+- [Alejandro M. Coca Rojas (@alxmcr)](https://www.github.com/alxmcr)
+
+## Feedback
+
+If you have any feedback, please reach out to us at amcocarojas@gmail.com.
