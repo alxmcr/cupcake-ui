@@ -1,7 +1,7 @@
 # .github/workflows/deploy-github-pages.yaml
 
 # Workflow name
-name: Build and Publish Storybook to GitHub Pages
+name: Cupcake UI - Storybook to GitHub Pages
 
 on: push
 
