@@ -1,10 +1,13 @@
 {
   "name": "@alxmcr/cupcake-ui-ale-ds",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "license": "MIT",
   "type": "module",
-  "repository": "https://github.com/alxmcr/cupcake-ui-ale",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxmcr/cupcake-ui-ale.git"
+  },
   "publishConfig": {
     "@alxmcr:registry": "https://npm.pkg.github.com"
   },
@@ -72,5 +75,17 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.3.4"
-  }
+  },
+  "description": "A design system for a fintech startup that is changing the world.",
+  "bugs": {
+    "url": "https://github.com/alxmcr/cupcake-ui-ale/issues"
+  },
+  "homepage": "https://github.com/alxmcr/cupcake-ui-ale#readme",
+  "keywords": [
+    "react",
+    "typescript",
+    "storybook",
+    "tailwindcss"
+  ],
+  "author": "Alejandro Coca"
 }
