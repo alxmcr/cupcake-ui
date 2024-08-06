@@ -53,7 +53,7 @@ export default function ControlComboBox({
         >
           {labelText}
         </label>
-        <div className="absolute right-4 top-[14px] z-20 size-[20px] duration-300 peer-focus:peer-placeholder-shown:rotate-180">
+        <div className="absolute right-4 top-[14px] z-20 size-[20px] text-gray-500 duration-300 peer-focus:peer-placeholder-shown:rotate-180 peer-focus:peer-placeholder-shown:text-gray-600">
           <Icon20x20 iconName="icon-arrow-down" />
         </div>
       </div>
