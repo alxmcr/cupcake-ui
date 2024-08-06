@@ -59,7 +59,7 @@ export default function HomePage() {
             value: 'q7r8s9t0',
           },
         ]}
-        statusLoadingOptions="SUCCESS"
+        isLoadingOptions
       />
     </div>
   );
