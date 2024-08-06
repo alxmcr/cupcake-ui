@@ -1,4 +1,4 @@
-name: Cupcake UI - Publish Github Package
+name: Cupcake UI - Github Package - Release and Publish
 
 on:
   release:

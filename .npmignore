@@ -1,0 +1,7 @@
+src/
+tests/
+*.ts
+*.tsx
+*.md
+.vscode/
+node_modules/
