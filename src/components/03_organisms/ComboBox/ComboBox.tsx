@@ -1,9 +1,10 @@
 import React from 'react';
+import { TIMEOUT_SELECT_OPTION_MS } from '../../../helpers/constants';
+import { sortByText } from '../../../helpers/optionUserListHelpers';
 import { OptionData } from '../../../types/appTypes';
+import { SkeletonComboBox } from '../../01_atoms/SkeletonComboBox';
 import { ControlComboBox } from '../ControlComboBox';
 import { WrapperListOptions } from '../WrapperListOptions';
-import { sortByText } from '../../../helpers/optionUserListHelpers';
-import { SkeletonComboBox } from '../../01_atoms/SkeletonComboBox';
 
 type Props = {
   options: OptionData[];
@@ -51,7 +52,7 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
       setListOptions(listWithOptionSelectedOnTop);
       // Close
       setIsOpenComboBox(false);
-    }, 400);
+    }, TIMEOUT_SELECT_OPTION_MS);
   };
 
   React.useEffect(() => {
