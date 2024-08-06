@@ -3,6 +3,7 @@ import { OptionData } from '../../../types/appTypes';
 import { ControlComboBox } from '../ControlComboBox';
 import { WrapperListOptions } from '../WrapperListOptions';
 import { sortByText } from '../../../helpers/optionUserListHelpers';
+import { SkeletonComboBox } from '../../01_atoms/SkeletonComboBox';
 
 type Props = {
   options: OptionData[];
@@ -81,6 +82,14 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   React.useEffect(() => {
     setListOptions(sortByText(options));
   }, [options]);
+
+  if (isLoadingOptions) {
+    return (
+      <div className="h-8 w-[268px] md:w-[632px] lg:w-[996px]">
+        <SkeletonComboBox className="w-full" />
+      </div>
+    );
+  }
 
   return (
     <div ref={comboBoxRef}>
