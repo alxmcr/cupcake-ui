@@ -68,13 +68,19 @@ Start the storybook server
 
 ```bash
   npm run storybook
+
+  # http://localhost:6006/
 ```
 
 Start the development server
 
 ```bash
   npm run dev
+
+  # http://localhost:<your_port>/
 ```
+
+`<your_port>`: on enviroment variables (`.env`, `.env.local`).
 
 ## Using Cupcake UI: ComboBox
 
@@ -130,9 +136,12 @@ npm run dev
 
 ![Box component with your ComboBox](https://cupcake-ui.netlify.app/screenshots-using/01-using-combobox.png)
 
-## Demo
+## Storybook
 
-[Cupcake UI - Storybook](https://66b1bf8878373c966dd1bcab-glgfaoymye.chromatic.com/?path=/docs/configure-your-project--docs)
+- [Storybook: Github Page](https://alxmcr.github.io/cupcake-ui/?path=/docs/organisms-combobox--docs)
+- [Cupcake UI - Storybook at Chromatic\*](https://66b1bf8878373c966dd1bcab-glgfaoymye.chromatic.com/?path=/docs/configure-your-project--docs)
+
+(\*) Chromatic: you need to create an account at [chromatic.com](https://www.chromatic.com/)
 
 ## Authors
 
