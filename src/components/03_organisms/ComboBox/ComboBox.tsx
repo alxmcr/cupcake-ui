@@ -37,12 +37,11 @@ export default function ComboBox({ options = [], isLoadingOptions = false }: Pro
   };
 
   const onClickSelectOption = (idSelected = '', nameSelected = '') => {
-    setNameOptionSelected(nameSelected);
-    setIdOptionSelected(idSelected);
-    setSearchText(nameSelected);
-    setIsFiltering(false);
-
     setTimeout(() => {
+      setNameOptionSelected(nameSelected);
+      setIdOptionSelected(idSelected);
+      setSearchText(nameSelected);
+      setIsFiltering(false);
       // Close
       setIsOpenComboBox(false);
     }, 400);
