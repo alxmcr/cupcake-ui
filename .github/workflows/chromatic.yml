@@ -3,8 +3,11 @@
 # Workflow name
 name: 'Chromatic Publish'
 
-# Event for the workflow
-on: push
+on:
+  # Event for the workflow to run on
+  push:
+    branches:
+      - 'main' # Replace with the branch you want to deploy from
 
 # List of jobs
 jobs:
