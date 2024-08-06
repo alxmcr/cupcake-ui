@@ -1,3 +1,4 @@
+import { filterByText } from '../../../helpers/optionUserListHelpers';
 import { OptionData } from '../../../types/appTypes';
 import { SkeletonListOptionsUser } from '../../01_atoms/SkeletonListOptionsUser';
 import { ListOptionsUser } from '../ListOptionsUser';
@@ -19,14 +20,7 @@ export default function WrapperListOptions({
   isFiltering = false,
   onClickSelectOption,
 }: Props) {
-  const optionsFiltered =
-    searchText === ''
-      ? options
-      : options.filter((option) =>
-          option.text.toLocaleLowerCase().trim().includes(searchText.toLocaleLowerCase().trim()),
-        );
-
-  const optionsToSort = isFiltering ? optionsFiltered : options;
+  const optionsToSort = isFiltering && searchText !== '' ? filterByText(options, searchText) : options;
 
   const optionsToRender = optionsToSort.sort((optionA, optionB) => {
     return optionA.text.localeCompare(optionB.text, undefined, {
