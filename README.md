@@ -89,60 +89,6 @@ Start the development server
 
 `<your_port>`: on enviroment variables (`.env`, `.env.local`).
 
-## Using Cupcake UI: ComboBox
-
-1. Create a React app with Typescript
-
-```bash
-npm create vite@latest
-
-// Project name: app-pastelito
-// other settings
-```
-
-2. Install NPM package: `cupcake-ui`
-
-```bash
-npm install cupcake-ui
-```
-
-3. Create a component on your React app
-
-```
-import { ComboBox } from 'cupcake-ui';
-
-export default function Box() {
-  return (
-    <div>
-      <ComboBox
-        options={[
-          {
-            id: "a1b2c3d4",
-            text: "Alice Johnson",
-            value: "a1b2c3d4",
-          },
-          {
-            id: "e5f6g7h8",
-            text: "Carlos Martinez",
-            value: "e5f6g7h8",
-          },
-        ]}
-      />
-    </div>
-  );
-}
-```
-
-4. Start your dev server
-
-```bash
-npm run dev
-
-// http://localhost:5173
-```
-
-![Box component with your ComboBox](https://my-cupcake-ui-001.netlify.app/screenshots-using/01-using-combobox.png)
-
 ## Discoveries
 
 (\*) Some comments left on Figma design.
