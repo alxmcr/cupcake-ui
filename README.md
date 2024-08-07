@@ -43,14 +43,6 @@ A design system for a fintech startup that is changing the world.
 
 (\*) Chromatic: you need to create an account at [chromatic.com](https://www.chromatic.com/)
 
-## Publish package
-
-- GitHub package
-
-![GitHub package](https://my-cupcake-ui-001.netlify.app/screenshots-publish-package/01-github-package-published.png)
-
-- NPM package
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your `.env` or `.env.local` file: `VITE_APP_PORT`
@@ -153,6 +145,8 @@ npm run dev
 
 ## Discoveries
 
+(\*) Some comments left on Figma design.
+
 - Multiple color palette.
 - Different spacing: line-height and letter-spacing.
 - Research about more box-shadow best practices with Tailwind.
@@ -170,6 +164,7 @@ npm run dev
 - Add more use cases about components built.
 - After more uses cases, work on integration testing.
 - Research about a customization developers documentation (on top Storybook)
+- Publish NPM package and GitHub Package.
 
 ## Authors
 
