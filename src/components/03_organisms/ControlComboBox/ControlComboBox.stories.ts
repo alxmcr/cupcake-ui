@@ -18,7 +18,6 @@ const meta = {
     searchText: { control: 'text' },
     onChangeSearchText: { action: 'onChangeSearchText' },
     onClickControlComboBox: { action: 'onClickControlComboBox' },
-    onBlurComboBox: { action: 'onBlurComboBox' },
   },
 } satisfies Meta<typeof ControlComboBox>;
 
@@ -37,6 +36,5 @@ export const Text: Story = {
     searchText: '',
     onChangeSearchText: () => {},
     onClickControlComboBox: () => {},
-    onBlurComboBox: () => {},
   },
 };
