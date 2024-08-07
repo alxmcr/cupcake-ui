@@ -39,7 +39,7 @@ A design system for a fintech startup that is changing the world.
 ## Storybook
 
 - [Storybook: Github Page](https://alxmcr.github.io/cupcake-ui-ale)
-- [Cupcake UI - Storybook at Chromatic\*](https://66b1bf8878373c966dd1bcab-glgfaoymye.chromatic.com)
+- [Cupcake UI - Storybook at Chromatic\*](https://66b1bf8878373c966dd1bcab-hrhfrvfedy.chromatic.com/)
 
 (\*) Chromatic: you need to create an account at [chromatic.com](https://www.chromatic.com/)
 
